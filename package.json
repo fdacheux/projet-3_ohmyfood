@@ -1,0 +1,19 @@
+{
+  "name": "p3_ohmyfood",
+  "version": "1.0.0",
+  "description": "restaurant mobile website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fdacheux/projet-3_ohmyfood.git"
+  },
+  "author": "fdacheux",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fdacheux/projet-3_ohmyfood/issues"
+  },
+  "homepage": "https://github.com/fdacheux/projet-3_ohmyfood#readme"
+}
