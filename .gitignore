@@ -1,4 +1,4 @@
-node_modules/
-commitlint.config.js
 .husky/
 .vscode/
+node_modules/
+commitlint.config.js
