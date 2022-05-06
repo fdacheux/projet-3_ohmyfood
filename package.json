@@ -4,7 +4,8 @@
   "description": "restaurant mobile website",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+    "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/fdacheux/projet-3_ohmyfood#readme",
   "devDependencies": {
     "@commitlint/cli": "^16.2.4",
-    "@commitlint/config-conventional": "^16.2.4"
+    "@commitlint/config-conventional": "^16.2.4",
+    "husky": "^7.0.4"
   }
 }
