@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/fdacheux/projet-3_ohmyfood/issues"
   },
-  "homepage": "https://github.com/fdacheux/projet-3_ohmyfood#readme"
+  "homepage": "https://github.com/fdacheux/projet-3_ohmyfood#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4"
+  }
 }
