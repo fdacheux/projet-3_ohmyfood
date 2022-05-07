@@ -39,8 +39,21 @@ h1 {
 
 footer {
   background-color: #353535;
-  padding: 24px 24px 32px 24px;
+  padding: 24px;
   color: #fff;
+}
+footer .logo {
+  font-size: 1.4rem;
+}
+footer li {
+  margin: 16px 0px;
+}
+footer i {
+  width: 14px;
+  margin-right: 8px;
+}
+footer i.partnership-icon {
+  font-size: 13px;
 }
 
 /*# sourceMappingURL=style.css.map */

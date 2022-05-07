@@ -1,6 +1,19 @@
 footer{
     background-color: #353535;
-    padding: 24px 24px 32px 24px;
+    padding: 24px;
     color: #fff;
+    & .logo{
+        font-size: 1.4rem;
+    }
+    & li{
+        margin: 16px 0px;
+    }
+    & i{
+        width: 14px;
+        margin-right: 8px;
+        &.partnership-icon{
+            font-size: 13px;
+        }
+    }
 }
 
