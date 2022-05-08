@@ -55,5 +55,33 @@ footer i {
 footer i.partnership-icon {
   font-size: 13px;
 }
+@media screen and (min-width: 768px) {
+  footer ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding-right: 4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  footer ul {
+    padding-top: 24px;
+  }
+}
+@media screen and (min-width: 992px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  footer {
+    text-align: center;
+    padding: 24px 10%;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
