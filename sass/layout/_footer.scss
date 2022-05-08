@@ -1,0 +1,41 @@
+footer{
+    background-color: $footer-background;
+    padding: 24px;
+    color: $white-color;
+    & .logo{
+        font-size: 1.4rem;
+    }
+    & li{
+        margin: 16px 0px;
+    }
+    & i{
+        width: 14px;
+        margin-right: 8px;
+        &.partnership-icon{
+            font-size: 13px;
+        }
+    }
+    & ul{
+        @media screen and (min-width: map-get($breakpoints, medium)){       
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+            padding-right: 4rem;
+        }
+        @media screen and (min-width: map-get($breakpoints, x-large)){
+            padding-top: 24px;
+        }
+    }
+    @media screen and (min-width: map-get($breakpoints, large)){       
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem 4rem;
+    } 
+    @media screen and (min-width: map-get($breakpoints, x-large)){   
+        text-align: center;
+        padding: 24px 10%;
+    } 
+}
+
