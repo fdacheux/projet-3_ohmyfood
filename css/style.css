@@ -26,8 +26,16 @@ h1 {
   font-size: 2.3rem;
 }
 
+h2 {
+  font-size: 1.7rem;
+}
+
 .logo {
   font-family: "Shrikhand", cursive;
+}
+
+.cta-block__promise {
+  font-size: 1.2rem;
 }
 
 footer .logo {
@@ -36,9 +44,9 @@ footer .logo {
 
 .button {
   box-shadow: 0px 4px 7px 2px #cfcfcf;
-  background: linear-gradient(#FF79DA, #9356DC);
   border-radius: 50px;
   padding: 1.1rem 1.5rem;
+  background: linear-gradient(#FF79DA, #9356DC);
   color: #fff;
   transition: all 280ms ease-in;
 }
