@@ -10,7 +10,7 @@ a {
   text-decoration: none;
 }
 
-ul {
+ul, ol {
   list-style: none;
 }
 
@@ -61,10 +61,6 @@ section {
   padding: 1.5rem;
 }
 
-.howto-section {
-  background-color: transparent;
-}
-
 .hero-section {
   text-align: center;
   padding: 0;
@@ -94,6 +90,56 @@ section {
 }
 .cta-block div {
   margin: 3rem 0 2rem 0;
+}
+
+.howto-section {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+.howto-section ol {
+  counter-reset: howto-list;
+  margin-left: 1rem;
+}
+.howto-section__step {
+  position: relative;
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
+  box-shadow: 0px 4px 10px 2px #d9d9d9;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  padding: 1.5rem;
+  font-weight: 700;
+  counter-increment: howto-list;
+  z-index: 1;
+}
+.howto-section__step::before {
+  position: absolute;
+  left: -14px;
+  bottom: 18px;
+  padding: 4px 8px;
+  border-radius: 50%;
+  background-color: #9356DC;
+  content: counter(howto-list);
+  color: #fff;
+}
+.howto-section__step i {
+  color: #707070;
+  margin-right: 0.7rem;
+  margin-left: 0.2rem;
+}
+.howto-section__step::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 20px;
+  background-color: #9356DC;
+  opacity: 0;
+  content: "";
+  transition: opacity 250ms;
 }
 
 footer {
@@ -147,6 +193,7 @@ footer i.partnership-icon {
   padding: 1.1rem 1.5rem;
   background: linear-gradient(170deg, #FF79DA 0%, #9356DC 99%);
   color: #fff;
+  cursor: pointer;
   transition: all 280ms ease-in;
 }
 .button-container__button-order {
@@ -157,6 +204,13 @@ footer i.partnership-icon {
 .button-container:hover {
   opacity: 0.85;
   box-shadow: 0px 6px 5px 3px #bfbfbf;
+}
+
+.howto-section__step:hover i {
+  color: #9356DC;
+}
+.howto-section__step:hover::after {
+  opacity: 0.1;
 }
 
 /*# sourceMappingURL=style.css.map */
