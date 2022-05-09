@@ -97,9 +97,40 @@ section {
   flex-direction: column;
   background-color: transparent;
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .howto-section {
+    justify-content: space-around;
+  }
+  .howto-section__header {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .howto-section {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
 .howto-section ol {
   counter-reset: howto-list;
   margin-left: 1rem;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .howto-section ol {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 2.5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .howto-section ol {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
 }
 .howto-section__step {
   position: relative;
@@ -124,9 +155,9 @@ section {
   color: #fff;
 }
 .howto-section__step i {
-  color: #707070;
   margin-right: 0.7rem;
   margin-left: 0.2rem;
+  color: #707070;
 }
 .howto-section__step::after {
   position: absolute;
@@ -140,6 +171,17 @@ section {
   opacity: 0;
   content: "";
   transition: opacity 250ms;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .howto-section__step {
+    width: 60%;
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .howto-section__step {
+    min-width: 30%;
+  }
 }
 
 footer {

@@ -2,10 +2,41 @@
     display: flex;
     flex-direction: column;
     background-color: transparent;
-    & ol{
+
+    @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)){
+        justify-content: space-around;
+
+        &__header {
+            text-align: center;
+        }
+    }
+
+    @media screen and (min-width: map-get($breakpoints, large)) {
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+        }
+    
+
+    & ol {
         counter-reset: howto-list;
         margin-left: 1rem;
+
+        @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            margin-top: 2.5rem;
+        }
+
+        @media screen and (min-width: map-get($breakpoints, large)) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
     }
+
     &__step {
         position: relative;
         margin-top: 1.8rem;
@@ -17,7 +48,8 @@
         font-weight: 700;
         counter-increment: howto-list;
         z-index:1;
-        &::before{
+
+        &::before {
             position: absolute;
             left: -14px;
             bottom: 18px;
@@ -27,11 +59,13 @@
             content:counter(howto-list);
             color: $white-colour;
         }
+
         & i {
-            color: darken($white-colour, 56%);
             margin-right: 0.7rem;
             margin-left: 0.2rem;
+            color: darken($white-colour, 56%);
         }
+
         &::after {
             position: absolute;
             top: 0;
@@ -45,7 +79,16 @@
             content: "";
             transition: opacity 250ms;
         }
-    }
-}
+        
+        @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+            width: 60%;
+            margin-top: 0;
+        }
 
+        @media  screen and (min-width: map-get($breakpoints, large)) {
+            min-width: 30%;
+        }
+    }
+
+}
 
