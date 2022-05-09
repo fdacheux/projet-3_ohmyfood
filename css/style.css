@@ -18,23 +18,49 @@ ul {
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  font-size: 1rem;
+}
+
 h1 {
   font-size: 2.3rem;
+}
+
+h2 {
+  font-size: 1.7rem;
 }
 
 .logo {
   font-family: "Shrikhand", cursive;
 }
 
+.cta-block__promise {
+  font-size: 1.2rem;
+}
+
 footer .logo {
   font-size: 1.4rem;
+}
+
+.button {
+  box-shadow: 0px 4px 7px 2px #cfcfcf;
+  border-radius: 50px;
+  padding: 1.1rem 1.5rem;
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: #fff;
+  transition: all 280ms ease-in;
+}
+
+.button:hover {
+  opacity: 0.85;
+  box-shadow: 0px 6px 5px 3px #bfbfbf;
 }
 
 header {
   display: flex;
   align-items: center;
   text-align: center;
-  padding: 32px;
+  padding: 0.5rem 0;
 }
 header i {
   font-size: 1.8rem;
@@ -42,6 +68,46 @@ header i {
 
 h1 {
   width: 100%;
+}
+
+section {
+  background-color: whitesmoke;
+  padding: 1.5rem;
+}
+
+.howto-section {
+  background-color: transparent;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 0;
+}
+.hero-section > * {
+  padding: 1.5rem;
+}
+
+.location-block {
+  box-shadow: 0px 8px 6px -6px #cfcfcf inset;
+  background-color: #ebebeb;
+  width: 100%;
+  font-weight: 500;
+}
+.location-block i {
+  margin-right: 0.8rem;
+}
+
+.cta-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 2rem;
+}
+.cta-block h2 {
+  padding-bottom: 0.8rem;
+}
+.cta-block div {
+  margin: 3rem 0 2rem 0;
 }
 
 footer {
