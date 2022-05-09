@@ -2,7 +2,8 @@ $colour-primary: #9356DC;
 $colour-secondary: #FF79DA;
 $colour-tertiary: #99E2D0;
 $white-color: #fff;
-$footer-background: #353535;
+$sections-background: darken($white-color, 4%);
+$colour-button: linear-gradient($colour-secondary, $colour-primary);
 
 $breakpoints: (
     medium: 768px,
