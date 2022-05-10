@@ -66,6 +66,10 @@ section {
   padding: 1.5rem;
 }
 
+h2 {
+  margin: 1.7rem 0 1.7rem 0;
+}
+
 .hero-section {
   text-align: center;
   padding: 0;
@@ -97,10 +101,15 @@ section {
   margin: 3rem 0 2rem 0;
 }
 
+/*Whole howto section*/
 .howto-section {
   display: flex;
   flex-direction: column;
   background-color: transparent;
+  /*Howto section style on tablets*/
+  /* Howto section style on large screens */
+  /*How to steps container and responsive*/
+  /* Ordered list elements : */
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .howto-section {
@@ -112,42 +121,49 @@ section {
 }
 @media screen and (min-width: 992px) {
   .howto-section {
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   }
 }
 .howto-section ol {
+  display: flex;
+  flex-direction: column;
   counter-reset: howto-list;
+  /*reset number for ordered list */
   margin-left: 1rem;
+  /*list style on tablets : centered column*/
+  /*list style on large screens : row*/
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .howto-section ol {
-    display: flex;
-    flex-direction: column;
     width: 100%;
     align-items: center;
-    margin-top: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }
 @media screen and (min-width: 992px) {
   .howto-section ol {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 1rem;
   }
 }
 .howto-section__step {
   position: relative;
-  margin-top: 1.8rem;
-  margin-bottom: 1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
   box-shadow: 0px 4px 10px 2px #d9d9d9;
   border-radius: 20px;
   background-color: whitesmoke;
   padding: 1.5rem;
   font-weight: 700;
   counter-increment: howto-list;
+  /*increment number of list for each element*/
   z-index: 1;
+  /* element 1 of stack for opacity animation on hover */
+  /*Number for list elements: style, position and content*/
+  /*Create an empty transparent element below li for animation purpose*/
+  /*List elements on tablets: not in full-width anymore*/
+  /*List elements on large screen*/
 }
 .howto-section__step::before {
   position: absolute;
@@ -157,6 +173,7 @@ section {
   border-radius: 50%;
   background-color: #9356DC;
   content: counter(howto-list);
+  /* Add a new element with the incremented numbers in it*/
   color: #fff;
 }
 .howto-section__step i {
@@ -165,12 +182,13 @@ section {
   color: #707070;
 }
 .howto-section__step::after {
+  z-index: -1;
+  /*last on the stack */
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
   border-radius: 20px;
   background-color: #9356DC;
   opacity: 0;
@@ -180,7 +198,6 @@ section {
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .howto-section__step {
     width: 60%;
-    margin-top: 0;
   }
 }
 @media screen and (min-width: 992px) {
@@ -193,13 +210,16 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1.5rem;
+  /* Cards*/
 }
 .restaurants-block article {
-  border-radius: 15px;
-  width: 90%;
-  background-color: #fff;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px 2px #d9d9d9;
+  border-radius: 15px;
+  width: 100%;
+  background-color: #fff;
 }
 .restaurants-block article img {
   object-fit: cover;

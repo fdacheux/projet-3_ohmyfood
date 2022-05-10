@@ -1,14 +1,20 @@
+
+
 .restaurants-block{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
 
+    /* Cards*/
     article {
-        border-radius: 15px;
-        width: 90%;
-        background-color: $white-colour;
-        overflow: hidden;
         position: relative;
+        overflow: hidden;
+        box-shadow: 0px 4px 10px 2px darken($white-colour, 15%);;
+        border-radius: 15px;
+        width: 100%;
+        background-color: $white-colour;
+        
     
         & img {
             object-fit: cover;
