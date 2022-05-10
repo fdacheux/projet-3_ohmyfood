@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
 *, ::before, ::after {
   box-sizing: border-box;
@@ -68,6 +69,15 @@ section {
 
 h2 {
   margin: 1.7rem 0 1.7rem 0;
+}
+@media screen and (min-width: 1200px) {
+  h2 {
+    text-align: center;
+  }
+}
+
+h3 {
+  margin: 0 0 0.2rem 0;
 }
 
 .hero-section {
@@ -206,12 +216,42 @@ h2 {
   }
 }
 
+@media screen and (min-width: 992px) {
+  .restaurants-section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .restaurants-section__header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
 .restaurants-block {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1.5rem;
+  margin: 1.5rem 0 3rem 0;
   /* Cards*/
+}
+@media screen and (min-width: 768px) {
+  .restaurants-block {
+    flex-flow: row wrap;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .restaurants-block {
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .restaurants-block {
+    justify-content: center;
+    gap: 5rem;
+  }
 }
 .restaurants-block article {
   position: relative;
@@ -221,27 +261,84 @@ h2 {
   width: 100%;
   background-color: #fff;
 }
-.restaurants-block article img {
-  object-fit: cover;
-  height: 30vw;
-  width: 100%;
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .restaurants-block article {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .restaurants-block article {
+    width: 40%;
+  }
 }
 .restaurants-block__photo-container {
+  height: 150px;
   overflow: hidden;
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .restaurants-block__photo-container {
+    height: 200px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .restaurants-block__photo-container {
+    max-height: 300px;
+    height: 20vw;
+  }
+}
+.restaurants-block__card-img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.restaurants-block__card-img.--centered1 {
+  object-position: 50% 50%;
+}
+.restaurants-block__card-img.--centered2 {
+  object-position: 50% 58%;
+}
+.restaurants-block__card-img.--centered3 {
+  object-position: 50% 75%;
+}
+.restaurants-block__card-img.--centered4 {
+  object-position: 50% 80%;
 }
 .restaurants-block__card-body {
   display: flex;
-  min-height: fit-content;
-  padding-left: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 80px;
+  min-height: 50px;
+  padding: 0.8rem 1rem;
 }
 .restaurants-block__new-info {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 4%;
+  top: 5%;
   border-radius: 2px;
   background-color: #99E2D0;
-  padding: 5px 10px;
+  padding: 6px 11px;
   color: #278870;
+}
+@media screen and (min-width: 575px) and (max-width: 991px) {
+  .restaurants-block__new-info {
+    padding: 6px 11px;
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .restaurants-block__new-info {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .restaurants-block__new-info {
+    font-size: 1.3rem;
+  }
+}
+.restaurants-block i {
+  font-size: 30px;
+  /*Injection de l'élément pour l'animation du coeur*/
 }
 
 footer {
