@@ -70,11 +70,6 @@ section {
 h2 {
   margin: 1.7rem 0 1.7rem 0;
 }
-@media screen and (min-width: 1200px) {
-  h2 {
-    text-align: center;
-  }
-}
 
 h3 {
   margin: 0 0 0.2rem 0;
@@ -291,16 +286,16 @@ h3 {
   height: 100%;
   width: 100%;
 }
-.restaurants-block__card-img.--centered1 {
+.restaurants-block__card-img.img--centered1 {
   object-position: 50% 50%;
 }
-.restaurants-block__card-img.--centered2 {
+.restaurants-block__card-img.img--centered2 {
   object-position: 50% 58%;
 }
-.restaurants-block__card-img.--centered3 {
+.restaurants-block__card-img.img--centered3 {
   object-position: 50% 75%;
 }
-.restaurants-block__card-img.--centered4 {
+.restaurants-block__card-img.img--centered4 {
   object-position: 50% 80%;
 }
 .restaurants-block__card-body {
@@ -336,9 +331,32 @@ h3 {
     font-size: 1.3rem;
   }
 }
-.restaurants-block i {
+.restaurants-block__heart-icon {
   font-size: 30px;
+  position: relative;
   /*Injection de l'élément pour l'animation du coeur*/
+}
+.restaurants-block__heart-icon i {
+  z-index: -1;
+  opacity: 1;
+  transition: all 500ms ease-in-out;
+}
+.restaurants-block__heart-icon .bg-icon {
+  /*positionning bg-button */
+  z-index: 1;
+  position: absolute;
+  top: 4px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /*preparing animation : scale and initial position */
+  transform-origin: 50% 80%;
+  transform: scale(0);
+  /*coloring icon */
+  background: linear-gradient(5deg, #FF79DA 0%, #9356DC 99%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 400ms ease-in;
 }
 
 footer {
@@ -410,6 +428,10 @@ footer i.partnership-icon {
 }
 .howto-section__step:hover::after {
   opacity: 0.1;
+}
+
+.restaurants-block__heart-icon:hover .bg-icon {
+  transform: scale(1.1);
 }
 
 /*# sourceMappingURL=style.css.map */

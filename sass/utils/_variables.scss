@@ -3,7 +3,10 @@ $colour-secondary: #FF79DA;
 $colour-tertiary: #99E2D0;
 $white-colour: #fff;
 $sections-background: darken($white-colour, 4%);
-$colour-button: linear-gradient(170deg, $colour-secondary 0%, $colour-primary 99%);
+$colour-button: (
+    button: linear-gradient(170deg, $colour-secondary 0%, $colour-primary 99%),
+    fav-button: linear-gradient(5deg, $colour-secondary 0%, $colour-primary 99%)
+);
 
 $breakpoints: (
     medium: 768px,
