@@ -1,0 +1,41 @@
+.restaurants-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    article {
+        border-radius: 15px;
+        width: 90%;
+        background-color: $white-colour;
+        overflow: hidden;
+        position: relative;
+    
+        & img {
+            object-fit: cover;
+            height: 30vw;
+            width: 100%;
+        }
+    }
+
+    &__photo-container{
+        // max-height: 40vw;
+        overflow: hidden;
+    }
+
+    &__card-body {
+        display: flex;
+        min-height: fit-content;
+        padding-left: 1.5rem;
+    }
+
+    &__new-info {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        border-radius: 2px;
+        background-color: $colour-tertiary;
+        padding: 5px 10px; 
+        color: darken($colour-tertiary, 40%);
+    }
+    
+}    
