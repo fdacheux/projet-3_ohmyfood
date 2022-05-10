@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
 *, ::before, ::after {
   box-sizing: border-box;
@@ -42,6 +43,11 @@ footer .logo {
   font-size: 1.4rem;
 }
 
+.restaurants-block__new-info {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -59,6 +65,14 @@ h1 {
 section {
   background-color: whitesmoke;
   padding: 1.5rem;
+}
+
+h2 {
+  margin: 1.7rem 0 1.7rem 0;
+}
+
+h3 {
+  margin: 0 0 0.2rem 0;
 }
 
 .hero-section {
@@ -92,10 +106,15 @@ section {
   margin: 3rem 0 2rem 0;
 }
 
+/*Whole howto section*/
 .howto-section {
   display: flex;
   flex-direction: column;
   background-color: transparent;
+  /*Howto section style on tablets*/
+  /* Howto section style on large screens */
+  /*How to steps container and responsive*/
+  /* Ordered list elements : */
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .howto-section {
@@ -107,42 +126,49 @@ section {
 }
 @media screen and (min-width: 992px) {
   .howto-section {
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   }
 }
 .howto-section ol {
+  display: flex;
+  flex-direction: column;
   counter-reset: howto-list;
+  /*reset number for ordered list */
   margin-left: 1rem;
+  /*list style on tablets : centered column*/
+  /*list style on large screens : row*/
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .howto-section ol {
-    display: flex;
-    flex-direction: column;
     width: 100%;
     align-items: center;
-    margin-top: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }
 @media screen and (min-width: 992px) {
   .howto-section ol {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 1rem;
   }
 }
 .howto-section__step {
   position: relative;
-  margin-top: 1.8rem;
-  margin-bottom: 1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
   box-shadow: 0px 4px 10px 2px #d9d9d9;
   border-radius: 20px;
   background-color: whitesmoke;
   padding: 1.5rem;
   font-weight: 700;
   counter-increment: howto-list;
+  /*increment number of list for each element*/
   z-index: 1;
+  /* element 1 of stack for opacity animation on hover */
+  /*Number for list elements: style, position and content*/
+  /*Create an empty transparent element below li for animation purpose*/
+  /*List elements on tablets: not in full-width anymore*/
+  /*List elements on large screen*/
 }
 .howto-section__step::before {
   position: absolute;
@@ -152,6 +178,7 @@ section {
   border-radius: 50%;
   background-color: #9356DC;
   content: counter(howto-list);
+  /* Add a new element with the incremented numbers in it*/
   color: #fff;
 }
 .howto-section__step i {
@@ -160,12 +187,13 @@ section {
   color: #707070;
 }
 .howto-section__step::after {
+  z-index: -1;
+  /*last on the stack */
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
   border-radius: 20px;
   background-color: #9356DC;
   opacity: 0;
@@ -175,13 +203,161 @@ section {
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .howto-section__step {
     width: 60%;
-    margin-top: 0;
   }
 }
 @media screen and (min-width: 992px) {
   .howto-section__step {
     min-width: 30%;
   }
+}
+
+@media screen and (min-width: 992px) {
+  .restaurants-section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .restaurants-section__header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+.restaurants-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 1.5rem 0 3rem 0;
+  /* Cards*/
+}
+@media screen and (min-width: 768px) {
+  .restaurants-block {
+    flex-flow: row wrap;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .restaurants-block {
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .restaurants-block {
+    justify-content: center;
+    gap: 5rem;
+  }
+}
+.restaurants-block article {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px 2px #d9d9d9;
+  border-radius: 15px;
+  width: 100%;
+  background-color: #fff;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .restaurants-block article {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .restaurants-block article {
+    width: 40%;
+  }
+}
+.restaurants-block__photo-container {
+  height: 150px;
+  overflow: hidden;
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .restaurants-block__photo-container {
+    height: 200px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .restaurants-block__photo-container {
+    max-height: 300px;
+    height: 20vw;
+  }
+}
+.restaurants-block__card-img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.restaurants-block__card-img.img--centered1 {
+  object-position: 50% 50%;
+}
+.restaurants-block__card-img.img--centered2 {
+  object-position: 50% 58%;
+}
+.restaurants-block__card-img.img--centered3 {
+  object-position: 50% 75%;
+}
+.restaurants-block__card-img.img--centered4 {
+  object-position: 50% 80%;
+}
+.restaurants-block__card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 80px;
+  min-height: 50px;
+  padding: 0.8rem 1rem;
+}
+.restaurants-block__new-info {
+  position: absolute;
+  right: 4%;
+  top: 5%;
+  border-radius: 2px;
+  background-color: #99E2D0;
+  padding: 6px 11px;
+  color: #278870;
+}
+@media screen and (min-width: 575px) and (max-width: 991px) {
+  .restaurants-block__new-info {
+    padding: 6px 11px;
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .restaurants-block__new-info {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .restaurants-block__new-info {
+    font-size: 1.3rem;
+  }
+}
+.restaurants-block__heart-icon {
+  font-size: 30px;
+  position: relative;
+  /*Injection de l'élément pour l'animation du coeur*/
+}
+.restaurants-block__heart-icon i {
+  z-index: -1;
+  opacity: 1;
+  transition: all 500ms ease-in-out;
+}
+.restaurants-block__heart-icon .bg-icon {
+  /*positionning bg-button */
+  z-index: 1;
+  position: absolute;
+  top: 4px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /*preparing animation : scale and initial position */
+  transform-origin: 50% 80%;
+  transform: scale(0);
+  /*coloring icon */
+  background: linear-gradient(5deg, #FF79DA 0%, #9356DC 99%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 400ms ease-in;
 }
 
 footer {
@@ -253,6 +429,10 @@ footer i.partnership-icon {
 }
 .howto-section__step:hover::after {
   opacity: 0.1;
+}
+
+.restaurants-block__heart-icon:hover .bg-icon {
+  transform: scale(1.1);
 }
 
 /*# sourceMappingURL=style.css.map */

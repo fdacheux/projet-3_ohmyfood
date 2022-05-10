@@ -1,0 +1,155 @@
+.restaurants-section {
+    @media screen and (min-width: map-get($breakpoints, large)){
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.restaurants-section__header {
+    @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+}
+
+.restaurants-block{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0 3rem 0;
+
+    @media screen and (min-width: map-get($breakpoints, medium)) {
+        flex-flow: row wrap;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+        justify-content: center;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, large)) {
+        justify-content: center;
+        gap: 5rem;
+    }
+
+    /* Cards*/
+    & article {
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0px 4px 10px 2px darken($white-colour, 15%);;
+        border-radius: 15px;
+        width: 100%;
+        background-color: $white-colour;
+        
+        @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+            width: 40%;
+        }
+
+        @media screen and (min-width: map-get($breakpoints, large)) {
+            width: 40%;
+        }
+
+    }
+
+    &__photo-container{
+        height: 150px;
+        overflow: hidden;
+
+        @media screen and (min-width:576px) and (max-width: map-get($max-width, small)) {
+            height: 200px;
+        }
+
+        @media screen and (min-width: map-get($breakpoints, large)) {
+            max-height: 300px;
+            height: 20vw;
+        }        
+    }
+    
+    &__card-img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        
+        &.img--centered1{
+            object-position: 50% 50%;
+        }
+
+        &.img--centered2 {
+            object-position: 50% 58%;
+        }
+
+        &.img--centered3{
+            object-position: 50% 75%;
+        }
+
+        &.img--centered4{
+            object-position: 50% 80%;
+        }
+    }
+
+
+    &__card-body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-height: 80px;
+        min-height: 50px;
+        padding: 0.8rem 1rem;
+
+    }
+
+    &__new-info {
+        position: absolute;
+        right: 4%;
+        top: 5%;
+        border-radius: 2px;
+        background-color: $colour-tertiary;
+        padding: 6px 11px; 
+        color: darken($colour-tertiary, 40%);
+        
+        @media screen and (min-width: 575px) and (max-width: map-get($max-width, medium)){
+            padding: 6px 11px;
+            font-size: 1rem;
+        }
+
+        @media screen and (min-width: map-get($breakpoints, large)) and (max-width: map-get($max-width, large)){
+            font-size: 1.1rem;
+        }
+
+        @media screen and (min-width: map-get($breakpoints, x-large)){
+            font-size: 1.3rem;
+        }
+    }
+
+    &__heart-icon {
+        font-size: 30px;
+        position: relative;
+
+        & i {
+            z-index: -1;
+            opacity: 1;
+            transition: all 500ms ease-in-out;
+        }
+    
+        /*Injection de l'élément pour l'animation du coeur*/
+        & .bg-icon {
+            /*positionning bg-button */
+            z-index: 1;
+            position: absolute;
+            top: 4px; 
+            bottom: 0;
+            left: 0;
+            right: 0;
+            /*preparing animation : scale and initial position */
+            transform-origin: 50% 80%;
+            transform: scale(0);
+            /*coloring icon */
+            background: map-get($colour-button, fav-button);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 400ms ease-in;
+        }
+    }
+    
+}    
