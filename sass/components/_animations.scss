@@ -1,0 +1,21 @@
+.button-container:hover {
+
+        opacity:0.85;
+        box-shadow: 0px 6px 5px 3px darken($white-colour, 25%);
+}
+
+.howto-section__step:hover{
+
+        & i{
+                color: $colour-primary;
+        }
+        &::after{
+                opacity: 0.1;
+        }
+}
+
+.restaurants-block__heart-icon:hover{
+        & .bg-icon{
+                transform: scale(1.1);
+        }
+}

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
+
+@import 'base/base';
+@import 'base/typography';
+
+@import 'utils/variables';
+
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/hero-section';
+@import 'layout/howto-section';
+@import 'layout/restaurants-section';
+@import 'layout/footer';
+
+@import 'components/button';
+@import 'components/animations';
+

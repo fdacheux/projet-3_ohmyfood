@@ -1,0 +1,38 @@
+footer{
+    background-color: darken($white-colour, 79.3%);
+    padding: 24px;
+    color: $white-colour;
+    & li{
+        margin: 16px 0px;
+    }
+    & i{
+        width: 14px;
+        margin-right: 8px;
+        &.partnership-icon{
+            font-size: 13px;
+        }
+    }
+    & ul{
+        @media screen and (min-width: map-get($breakpoints, medium)){       
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+            padding-right: 4rem;
+        }
+        @media screen and (min-width: map-get($breakpoints, x-large)){
+            padding-top: 24px;
+        }
+    }
+    @media screen and (min-width: map-get($breakpoints, large)){       
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem 4rem;
+    } 
+    @media screen and (min-width: map-get($breakpoints, x-large)){   
+        text-align: center;
+        padding: 24px 10%;
+    } 
+}
+
