@@ -354,6 +354,7 @@ h3 {
   transform: scale(0);
   /*coloring icon */
   background: linear-gradient(5deg, #FF79DA 0%, #9356DC 99%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: transform 400ms ease-in;

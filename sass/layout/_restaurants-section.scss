@@ -145,6 +145,7 @@
             transform: scale(0);
             /*coloring icon */
             background: map-get($colour-button, fav-button);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             transition: transform 400ms ease-in;
