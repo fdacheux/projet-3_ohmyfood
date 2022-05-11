@@ -1,0 +1,35 @@
+.menus-section__photo-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    z-index: -1;
+    & img {
+        object-fit: cover;
+        width: 100%;
+        &.francaise-photo--centered{
+            height: 300px;
+            object-position: 30% 100%;
+            @media screen and (min-width: 575px) and (max-width: map-get($max-width, small)) {
+                object-position: 50% 115%;
+                height: 400px;
+            }
+            @media screen and (min-width: map-get($breakpoints, medium)) {
+                height: 500px;
+            }
+        }
+    }
+}
+
+.menus-section {
+    margin-top: -70px;
+    border-radius: 50px;
+    @media screen and (min-width: map-get($breakpoints, medium)) {
+        margin-top: -170px;
+    }
+}
+
+.menu-block {
+    &__header {
+        display: flex;
+    }
+}
