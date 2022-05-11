@@ -33,10 +33,13 @@
             <div class="menu-block">
 
                 <div class="menu-block__header">
-                    <h2>Le délice des sens</h2>
-                    <div class="heart-icon">
-                        <i class="far fa-heart"></i>
-                        <i class="fas fa-heart bg-icon"></i>
+                    <h2 class="menu-block__title">Le délice des sens</h2>
+                    <div class="heart-icon-container">
+                        <input type="checkbox" name="favourite" id="delice">
+                        <label for="delice"class="heart-icon">
+                            <i class="far fa-heart"></i>
+                            <i class="fas fa-heart bg-icon"></i>
+                        </label>
                     </div>
                 </div>
 
@@ -152,7 +155,9 @@
 
                 <!-- ***** Order button ***** -->
                 <div class="button-container">
-                    <a href="#" class="button-container__button-order">Commander</a>
+                    <div class="button-container__button --order">
+                        <a href="#" class="button-container__link">Commander</a>
+                    </div>
                 </div>
 
             </div>

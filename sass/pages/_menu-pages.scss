@@ -22,7 +22,7 @@
 
 .menus-section {
     margin-top: -70px;
-    border-radius: 45px;
+    border-radius: 45px 45px 0 0;
     padding-top: 0.7rem;
     @media screen and (min-width: map-get($breakpoints, medium)) {
         margin-top: -170px;
@@ -33,6 +33,7 @@
     &__header {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 }
 
@@ -42,7 +43,7 @@
     gap: 1.2rem;
     padding-bottom: 2rem;
     &__categories-header{
-        padding-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
         position: relative;
         &::after {
             z-index: 1;
@@ -69,3 +70,10 @@
         justify-content: space-between;
     }
 }
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
