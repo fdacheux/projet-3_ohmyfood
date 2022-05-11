@@ -32,10 +32,15 @@
 .menu-block {
     &__header {
         display: flex;
-        align-items: center;
         justify-content: space-between;
     }
+}
 
+.categories-block{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding-bottom: 2rem;
     &__categories-header{
         padding-bottom: 1.5rem;
         position: relative;
@@ -54,3 +59,13 @@
     }
 }
 
+.menu-card{
+    @include cards-shadow;
+    border-radius: 15px;
+    background-color: $white-colour;
+    padding: 1rem;
+    &__description-block{
+        display: flex;
+        justify-content: space-between;
+    }
+}

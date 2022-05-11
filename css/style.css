@@ -35,6 +35,10 @@ h2 {
   font-size: 1.7rem;
 }
 
+h4 {
+  font-size: 1.1rem;
+}
+
 .cta-block__promise {
   font-size: 1.2rem;
 }
@@ -53,8 +57,12 @@ footer .logo {
   font-size: 2rem;
 }
 
-.menu-block__categories-header {
+.categories-block__categories-header {
   font-weight: 400;
+}
+
+.menu-card__price-tag {
+  font-weight: 900;
 }
 
 header {
@@ -484,14 +492,20 @@ footer i.partnership-icon {
 
 .menu-block__header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
-.menu-block__categories-header {
+
+.categories-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-bottom: 2rem;
+}
+.categories-block__categories-header {
   padding-bottom: 1.5rem;
   position: relative;
 }
-.menu-block__categories-header::after {
+.categories-block__categories-header::after {
   z-index: 1;
   position: absolute;
   top: 28px;
@@ -502,6 +516,17 @@ footer i.partnership-icon {
   width: 50px;
   background-color: #99E2D0;
   content: "";
+}
+
+.menu-card {
+  box-shadow: 0px 4px 10px 2px #d9d9d9;
+  border-radius: 15px;
+  background-color: #fff;
+  padding: 1rem;
+}
+.menu-card__description-block {
+  display: flex;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=style.css.map */

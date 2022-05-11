@@ -36,7 +36,7 @@
     & article {
         position: relative;
         overflow: hidden;
-        box-shadow: 0px 4px 10px 2px darken($white-colour, 15%);;
+        @include cards-shadow;
         border-radius: 15px;
         width: 100%;
         background-color: $white-colour;
