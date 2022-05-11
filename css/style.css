@@ -331,34 +331,6 @@ h3 {
     font-size: 1.3rem;
   }
 }
-.restaurants-block__heart-icon {
-  font-size: 30px;
-  position: relative;
-  /*Injection de l'élément pour l'animation du coeur*/
-}
-.restaurants-block__heart-icon i {
-  z-index: -1;
-  opacity: 1;
-  transition: all 500ms ease-in-out;
-}
-.restaurants-block__heart-icon .bg-icon {
-  /*positionning bg-button */
-  z-index: 1;
-  position: absolute;
-  top: 4px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  /*preparing animation : scale and initial position */
-  transform-origin: 50% 80%;
-  transform: scale(0);
-  /*coloring icon */
-  background: linear-gradient(5deg, #FF79DA 0%, #9356DC 99%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: transform 400ms ease-in;
-}
 
 footer {
   background-color: #353535;
@@ -419,6 +391,35 @@ footer i.partnership-icon {
   padding-right: 2rem;
 }
 
+.heart-icon {
+  font-size: 30px;
+  position: relative;
+  /*Injection de l'élément pour l'animation du coeur*/
+}
+.heart-icon i {
+  z-index: -1;
+  opacity: 1;
+  transition: all 500ms ease-in-out;
+}
+.heart-icon .bg-icon {
+  /*positionning bg-button */
+  z-index: 1;
+  position: absolute;
+  top: 4px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /*preparing animation : scale and initial position */
+  transform-origin: 50% 80%;
+  transform: scale(0);
+  /*coloring icon */
+  background: linear-gradient(5deg, #FF79DA 0%, #9356DC 99%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 400ms ease-in;
+}
+
 .button-container:hover {
   opacity: 0.85;
   box-shadow: 0px 6px 5px 3px #bfbfbf;
@@ -431,7 +432,7 @@ footer i.partnership-icon {
   opacity: 0.1;
 }
 
-.restaurants-block__heart-icon:hover .bg-icon {
+.heart-icon:hover .bg-icon {
   transform: scale(1.1);
 }
 
