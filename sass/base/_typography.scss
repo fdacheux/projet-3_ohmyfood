@@ -3,6 +3,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.logo, .menu-block__title {
+    font-family: 'Shrikhand', cursive;
+}
+
 body {
     font-size: 1rem;  
 }
@@ -15,8 +19,8 @@ h2 {
     font-size: 1.7rem;
 }
 
-.logo {
-    font-family: 'Shrikhand', cursive;
+.menu-block__title {
+    font-size: 2rem;
 }
 
 .cta-block__promise {

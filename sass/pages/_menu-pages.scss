@@ -22,7 +22,8 @@
 
 .menus-section {
     margin-top: -70px;
-    border-radius: 50px;
+    border-radius: 45px;
+    padding-top: 0.7rem;
     @media screen and (min-width: map-get($breakpoints, medium)) {
         margin-top: -170px;
     }
@@ -31,5 +32,7 @@
 .menu-block {
     &__header {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 }
