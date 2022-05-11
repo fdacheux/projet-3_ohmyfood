@@ -19,10 +19,6 @@ h2 {
     font-size: 1.7rem;
 }
 
-.menu-block__title {
-    font-size: 2rem;
-}
-
 .cta-block__promise {
     font-size: 1.2rem;
 }
@@ -34,4 +30,14 @@ footer .logo {
 .restaurants-block__new-info {
     font-size: 0.9rem;
     font-weight: 500;
+}
+
+/* Menu pages */
+
+.menu-block__title {
+    font-size: 2rem;
+}
+
+.menu-block__categories-header {
+    font-weight: 400;
 }

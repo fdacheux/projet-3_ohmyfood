@@ -35,4 +35,22 @@
         align-items: center;
         justify-content: space-between;
     }
+
+    &__categories-header{
+        padding-bottom: 1.5rem;
+        position: relative;
+        &::after {
+            z-index: 1;
+            position: absolute;
+            top: 28px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3.5px;
+            width: 50px; 
+            background-color: $colour-tertiary;
+            content: "";
+        }
+    }
 }
+
