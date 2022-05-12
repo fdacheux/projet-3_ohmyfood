@@ -291,6 +291,11 @@ h3 {
     width: 40%;
   }
 }
+.restaurants-block .heart-icon-container {
+  position: absolute;
+  bottom: 18px;
+  right: 16px;
+}
 .restaurants-block__photo-container {
   height: 150px;
   overflow: hidden;
