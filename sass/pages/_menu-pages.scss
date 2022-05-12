@@ -1,25 +1,3 @@
-.menus-section__photo-container {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-    z-index: -1;
-    & img {
-        object-fit: cover;
-        width: 100%;
-        &.francaise-photo--centered{
-            height: 300px;
-            object-position: 30% 100%;
-            @media screen and (min-width: 575px) and (max-width: map-get($max-width, small)) {
-                object-position: 50% 115%;
-                height: 400px;
-            }
-            @media screen and (min-width: map-get($breakpoints, medium)) {
-                height: 500px;
-            }
-        }
-    }
-}
-
 .menus-section {
     display: flex;
     flex-direction: column;
@@ -29,9 +7,100 @@
     @media screen and (min-width: map-get($breakpoints, medium)) {
         margin-top: -170px;
     }
+    &__photo-container{
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        z-index: -1;
+    }
+    &__photos {
+        object-fit: cover;
+        width: 100%;
+        height: 70vw;
+        @media screen and (min-width: 575px) and (max-width: map-get($max-width, small)) {
+            height: 60vw;
+        }
+        @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+            height: 55vw;
+        }
+        @media screen and (min-width: map-get($breakpoints, large)) and (max-width: map-get($max-width, large)) {
+            height: 50vw;
+        }
+        @media screen and (min-width: map-get($breakpoints, x-large)) and (max-width: map-get($max-width, x-large)) {
+            height: 45vw;
+        }
+        @media screen and (min-width: map-get($breakpoints, xx-large)) {
+            height: 35vw;
+        }
+        &.palette-photo{
+            object-position: 70% 100%;
+            
+            @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+                object-position: 50% 180%;
+            }
+            @media screen and (min-width: map-get($breakpoints, large)) and (max-width: map-get($max-width, large)) {
+                object-position: 50% 120%;
+            }
+            @media screen and (min-width: map-get($breakpoints, x-large)) and (max-width: map-get($max-width, x-large)) {
+                object-position: 50% 100%;
+            }
+            @media screen and (min-width: map-get($breakpoints, xx-large)) {
+                object-position: 50% 85%;
+            }
+        }
+        &.note-enchantee-photo {
+            object-position: 50% 55%;
 
+            @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+                object-position: 50% 76%;
+            }
+            @media screen and (min-width: map-get($breakpoints, large)) and (max-width: map-get($max-width, large)) {
+                object-position: 50% 70%;
+            }
+             @media screen and (min-width: map-get($breakpoints, x-large)) and (max-width: map-get($max-width, x-large)) {
+                object-position: 50% 67%;
+            }
+            @media screen and (min-width: map-get($breakpoints, xx-large)) {
+                object-position: 50% 63%;
+            }
+        }
+        &.francaise-photo {
+            object-position: 50% 100%;
 
+            @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+                object-position: 50% 205%;
+            }
+            @media screen and (min-width: map-get($breakpoints, large)) and (max-width: map-get($max-width, large)) {
+                object-position: 50% 160%;
+            }
+            @media screen and (min-width: map-get($breakpoints, x-large)) and (max-width: map-get($max-width, x-large)) {
+                object-position: 50% 125%;
+            }
+            @media screen and (min-width: map-get($breakpoints, xx-large)) {
+                object-position: 50% 85%;
+            }
+        }
+        &.delice-sens-photo {
+            object-position: 50% 135%;
+
+            @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+                object-position: 50% 190%;
+            }
+            @media screen and (min-width: map-get($breakpoints, large)) and (max-width: map-get($max-width, large)) {
+                object-position: 50% 150%;
+            }
+            @media screen and (min-width: map-get($breakpoints, x-large)) and (max-width: map-get($max-width, x-large)) {
+                object-position: 50% 115%;
+            }
+            @media screen and (min-width: map-get($breakpoints, xx-large)) {
+                object-position: 50% 90%;
+            }
+        }
+            
+        
+    }
 }
+
 
 .menu-block {
     &__header {
