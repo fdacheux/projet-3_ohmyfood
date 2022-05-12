@@ -3,6 +3,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.logo, .menu-block__title {
+    font-family: 'Shrikhand', cursive;
+}
+
 body {
     font-size: 1rem;  
 }
@@ -15,8 +19,8 @@ h2 {
     font-size: 1.7rem;
 }
 
-.logo {
-    font-family: 'Shrikhand', cursive;
+h4 {
+    font-size: 1.1rem;
 }
 
 .cta-block__promise {
@@ -30,4 +34,19 @@ footer .logo {
 .restaurants-block__new-info {
     font-size: 0.9rem;
     font-weight: 500;
+}
+
+/* Menu pages */
+
+.menu-block__title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.categories-block__categories-header {
+    font-weight: 400;
+}
+
+.menu-card__price-tag{
+    font-weight: 900;
 }

@@ -1,4 +1,4 @@
-.button-container {
+.button-container__button {
     box-shadow: 0px 4px 7px 2px darken($white-colour, 19%);
     border-radius: 50px;
     max-width: fit-content;
@@ -7,9 +7,41 @@
     color: $white-colour;
     cursor: pointer;
     transition: all 280ms ease-in;
-    &__button-order {
-        padding-left: 2rem;
-        padding-right: 2rem;
+    &.--order {
+        padding-left: 3rem;
+        padding-right: 3rem;
     }
 }
 
+
+.heart-icon {
+    border: none;
+    font-size: 30px;
+    position: relative;
+
+    & i {
+        z-index: -1;
+        opacity: 1;
+        transition: all 500ms ease-in-out;
+    }
+
+    /*Injection de l'élément pour l'animation du coeur*/
+    & .bg-icon {
+        /*positionning bg-button */
+        z-index: 1;
+        position: absolute;
+        top: 4px; 
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /*preparing animation : scale and initial position */
+        transform-origin: 50% 80%;
+        transform: scale(0);
+        /*coloring icon */
+        background: map-get($colour-button, fav-button);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: transform 400ms ease-in;
+    }
+}
