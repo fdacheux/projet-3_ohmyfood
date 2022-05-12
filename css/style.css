@@ -62,6 +62,7 @@ footer .logo {
 /* Menu pages */
 .menu-block__title {
   font-size: 2rem;
+  letter-spacing: 1px;
 }
 
 .categories-block__categories-header {
@@ -488,6 +489,8 @@ footer i.partnership-icon {
 }
 
 .menus-section {
+  display: flex;
+  flex-direction: column;
   margin-top: -70px;
   border-radius: 45px 45px 0 0;
   padding-top: 0.7rem;
@@ -503,11 +506,23 @@ footer i.partnership-icon {
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (min-width: 992px) {
+  .menu-block {
+    flex-flow: row wrap;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .menu-block__body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
 
 .categories-block {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 3vh;
   padding-bottom: 2rem;
 }
 .categories-block__categories-header {
@@ -526,6 +541,32 @@ footer i.partnership-icon {
   background-color: #99E2D0;
   content: "";
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .categories-block {
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    padding: 2rem 0;
+  }
+  .categories-block__categories-header {
+    flex-grow: 1;
+    position: sticky;
+    top: 0;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .categories-block {
+    flex-flow: row wrap;
+    padding-top: 1vw;
+  }
+  .categories-block__categories-header {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .categories-block {
+    width: 30%;
+  }
+}
 
 .menu-card {
   box-shadow: 0px 4px 10px 2px #d9d9d9;
@@ -533,15 +574,35 @@ footer i.partnership-icon {
   background-color: #fff;
   padding: 1rem;
 }
+.menu-card__description-block > p, .menu-card h4 {
+  overflow: hidden;
+  padding-right: 1rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .menu-card__description-block {
   display: flex;
   justify-content: space-between;
+  padding-top: 0.3rem;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .menu-card {
+    margin-right: 6vw;
+    width: 70%;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .menu-card {
+    width: 31.3%;
+  }
 }
 
 .button-container {
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-top: 4vw;
+  margin-bottom: 5vw;
 }
 
 /*# sourceMappingURL=style.css.map */
