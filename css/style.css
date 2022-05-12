@@ -416,7 +416,7 @@ footer i.partnership-icon {
   cursor: pointer;
   transition: all 280ms ease-in;
 }
-.button-container__button.--order {
+.button-container__button.button--order {
   padding-left: 3rem;
   padding-right: 3rem;
 }
