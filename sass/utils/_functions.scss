@@ -1,0 +1,3 @@
+@function delays-calculation ($increment, $multiplier){
+    @return $delay+$increment*$multiplier;
+}
