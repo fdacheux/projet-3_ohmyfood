@@ -483,94 +483,104 @@ footer i.partnership-icon {
     opacity: 1;
   }
 }
-.appearing-1 {
+.appearing-card-1 {
   animation: 0.5s ease-in-out 0.22s 1 appear;
   animation-fill-mode: both;
 }
 
-.appearing-2 {
+.appearing-card-2 {
   animation: 0.5s ease-in-out 0.44s 1 appear;
   animation-fill-mode: both;
 }
 
-.appearing-3 {
+.appearing-card-3 {
   animation: 0.5s ease-in-out 0.66s 1 appear;
   animation-fill-mode: both;
 }
 
-.appearing-4 {
+.appearing-card-4 {
   animation: 0.5s ease-in-out 0.88s 1 appear;
   animation-fill-mode: both;
 }
 
-.appearing-5 {
+.appearing-card-5 {
   animation: 0.5s ease-in-out 1.1s 1 appear;
   animation-fill-mode: both;
 }
 
-.appearing-6 {
+.appearing-card-6 {
   animation: 0.5s ease-in-out 1.32s 1 appear;
   animation-fill-mode: both;
 }
 
-.appearing-7 {
+.appearing-card-7 {
   animation: 0.5s ease-in-out 1.54s 1 appear;
   animation-fill-mode: both;
 }
 
-.appearing-8 {
+.appearing-card-8 {
   animation: 0.5s ease-in-out 1.76s 1 appear;
   animation-fill-mode: both;
 }
 
-.appearing-9 {
+.appearing-card-9 {
   animation: 0.5s ease-in-out 1.98s 1 appear;
   animation-fill-mode: both;
 }
 
+.appearing-card-10 {
+  animation: 0.5s ease-in-out 2.2s 1 appear;
+  animation-fill-mode: both;
+}
+
 @media screen and (min-width: 992px) {
-  .appearing-1 {
+  .appearing-card-1 {
     animation: 0.3s ease-in-out 0.15s 1 appear;
     animation-fill-mode: both;
   }
 
-  .appearing-2 {
+  .appearing-card-2 {
     animation: 0.3s ease-in-out 0.3s 1 appear;
     animation-fill-mode: both;
   }
 
-  .appearing-3 {
+  .appearing-card-3 {
     animation: 0.3s ease-in-out 0.45s 1 appear;
     animation-fill-mode: both;
   }
 
-  .appearing-4 {
+  .appearing-card-4 {
     animation: 0.3s ease-in-out 0.6s 1 appear;
     animation-fill-mode: both;
   }
 
-  .appearing-5 {
+  .appearing-card-5 {
     animation: 0.3s ease-in-out 0.75s 1 appear;
     animation-fill-mode: both;
   }
 
-  .appearing-6 {
+  .appearing-card-6 {
     animation: 0.3s ease-in-out 0.9s 1 appear;
     animation-fill-mode: both;
   }
 
-  .appearing-7 {
+  .appearing-card-7 {
     animation: 0.3s ease-in-out 1.05s 1 appear;
     animation-fill-mode: both;
   }
 
-  .appearing-8 {
+  .appearing-card-8 {
     animation: 0.3s ease-in-out 1.2s 1 appear;
     animation-fill-mode: both;
   }
 
-  .appearing-9 {
+  .appearing-card-9 {
     animation: 0.3s ease-in-out 1.35s 1 appear;
+    animation-fill-mode: both;
+  }
+
+  .appearing-card-10 {
+    animation: 0.3s ease-in-out 1.5s 1 appear;
     animation-fill-mode: both;
   }
 }
