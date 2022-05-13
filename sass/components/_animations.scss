@@ -19,3 +19,38 @@
         }
 }
 
+
+/* ------------ Menu-pages load animation ------------ */
+
+@keyframes appear{
+        0% {
+            opacity: 0;
+            transform: translateY(20%) ;
+        }
+        90% {
+            transform: translateY(-0.01%) ;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+}
+
+
+
+
+        
+@for $i from 1 through $appearing-cards {
+        .appearing-card-#{$i}{
+                @include animation-properties(0.5s, $i, 0.22);
+    }    
+}
+
+
+@media screen and (min-width: map-get($breakpoints, large)) {
+        @for $i from 1 through $appearing-cards {
+                .appearing-card-#{$i}{
+                        @include animation-properties(0.3s, $i, 0.15);
+            }    
+        }
+}

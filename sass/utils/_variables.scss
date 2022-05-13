@@ -20,5 +20,10 @@ $max-width: (
     medium: 991px,
     large: 1199px,
     x-large: 1399px
-)
+);
 
+/* Animations variables */
+
+$appearing-cards: 10; /*number of blocks appearing*/
+$delay: 0s;
+$duration: 0s;

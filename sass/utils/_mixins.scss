@@ -1,3 +1,9 @@
 @mixin cards-shadow {
     box-shadow:  0px 4px 10px 2px darken($white-colour, 15%);
 }
+
+@mixin animation-properties ($duration, $increment, $multiplier){
+    animation: $duration ease-in-out delays-calculation($increment, $multiplier) 1 appear;
+    animation-fill-mode: both;
+}
+
