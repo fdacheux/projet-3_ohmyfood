@@ -112,6 +112,8 @@
         flex-flow: row wrap;
     }
     @media screen and (min-width: map-get($breakpoints, x-large)) {
+        padding-right: 1.5vw;
+        padding-left: 1.5vw;
         &__body{
             display: flex;
             flex-flow: row wrap;
