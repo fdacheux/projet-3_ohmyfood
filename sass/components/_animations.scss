@@ -13,11 +13,20 @@
         }
 }
 
-.heart-icon:hover, input:checked{
-        & .bg-icon, +label>.bg-icon {
+input:checked{
+        &  +label>.bg-icon {
                 transform: scale(1.1);
         }
 }
+
+@media screen and (min-width: map-get($breakpoints, large)) {
+        .heart-icon:hover{
+                &>.bg-icon {
+                        transform: scale(1.1);
+                }
+        }
+}
+
 
 
 /* ------------ Menu-pages load animation ------------ */

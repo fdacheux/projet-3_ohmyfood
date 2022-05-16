@@ -257,7 +257,6 @@ h3 {
   flex-direction: column;
   gap: 1.5rem;
   margin: 1.5rem 0 3rem 0;
-  /* Cards*/
 }
 @media screen and (min-width: 768px) {
   .restaurants-block {
@@ -377,10 +376,15 @@ footer i.partnership-icon {
   opacity: 0.1;
 }
 
-.heart-icon:hover .bg-icon, .heart-icon:hover + label > .bg-icon, input:checked .bg-icon, input:checked + label > .bg-icon {
+input:checked + label > .bg-icon {
   transform: scale(1.1);
 }
 
+@media screen and (min-width: 992px) {
+  .heart-icon:hover > .bg-icon {
+    transform: scale(1.1);
+  }
+}
 /* ------------ Menu-pages load animation ------------ */
 @keyframes appear {
   0% {
