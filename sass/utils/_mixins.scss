@@ -2,8 +2,29 @@
     box-shadow:  0px 4px 10px 2px darken($white-colour, 15%);
 }
 
+@mixin text-ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 @mixin animation-properties ($duration, $increment, $multiplier){
     animation: $duration ease-in-out delays-calculation($increment, $multiplier) 1 appear;
     animation-fill-mode: both;
 }
 
+@mixin linear-animations-transition ($transformation-type, $transformation-duration){
+    transition: $transformation-type $transformation-duration linear;
+}
+
+@mixin rolling-check-icon {
+    transform: translateX(0) rotate(-360deg);
+}
+
+@mixin appearing-icon-box {
+    transform: scaleX(1);
+}
+
+@mixin moving-price-tag {
+    margin-right: 1rem;
+}

@@ -54,3 +54,56 @@
             }    
         }
 }
+
+
+/* ------------ Menu-cards check animation ------------ */
+
+.menu-card {
+        &__icon-box {
+                transform: scaleX(0);
+                transform-origin: right;
+                @include linear-animations-transition(transform, 0.4s);
+        }
+        &__check-icon{
+                transform: translateX(70px);
+                @include linear-animations-transition(transform, 0.3s);
+                transition-delay: 0.1s;
+        }
+        &__price-tag{
+                @include linear-animations-transition(all, 0.4s);
+        }
+
+        &__checkbox {
+                &:checked {
+                        &+ label{
+                                & i {
+                                        @include rolling-check-icon;
+                                }
+                                & .menu-card{
+                                        &__icon-box {
+                                                @include appearing-icon-box;
+                                        }
+                                        &__price-tag {
+                                                @include moving-price-tag;
+                                        }
+                                }    
+                        } 
+                }
+        }        
+        @media screen and (min-width: map-get($breakpoints, large)) {           
+                &:hover>input:not(:checked) +label{
+                        & i{
+                                @include rolling-check-icon;
+                        } 
+                        & .menu-card{
+                                &__icon-box {
+                                        @include appearing-icon-box;                               
+                                }     
+                                &__price-tag{
+                                        @include moving-price-tag;
+                                }                 
+                        }
+                }
+        }
+}
+    

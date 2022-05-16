@@ -584,6 +584,41 @@ footer i.partnership-icon {
     animation-fill-mode: both;
   }
 }
+/* ------------ Menu-cards check animation ------------ */
+.menu-card__icon-box {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s linear;
+}
+.menu-card__check-icon {
+  transform: translateX(70px);
+  transition: transform 0.3s linear;
+  transition-delay: 0.1s;
+}
+.menu-card__price-tag {
+  transition: all 0.4s linear;
+}
+.menu-card__checkbox:checked + label i {
+  transform: translateX(0) rotate(-360deg);
+}
+.menu-card__checkbox:checked + label .menu-card__icon-box {
+  transform: scaleX(1);
+}
+.menu-card__checkbox:checked + label .menu-card__price-tag {
+  margin-right: 1rem;
+}
+@media screen and (min-width: 992px) {
+  .menu-card:hover > input:not(:checked) + label i {
+    transform: translateX(0) rotate(-360deg);
+  }
+  .menu-card:hover > input:not(:checked) + label .menu-card__icon-box {
+    transform: scaleX(1);
+  }
+  .menu-card:hover > input:not(:checked) + label .menu-card__price-tag {
+    margin-right: 1rem;
+  }
+}
+
 .menus-section {
   display: flex;
   flex-direction: column;
@@ -800,19 +835,44 @@ footer i.partnership-icon {
   box-shadow: 0px 4px 10px 2px #d9d9d9;
   border-radius: 15px;
   background-color: #fff;
-  padding: 1rem;
   opacity: 0;
-}
-.menu-card__description-block > p, .menu-card h4 {
   overflow: hidden;
-  padding-right: 1rem;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  position: relative;
+}
+.menu-card__label {
+  display: flex;
+  height: 100%;
+}
+.menu-card__icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: #99E2D0;
+  border-radius: 0 10px 10px 0;
+  min-width: 70px;
 }
 .menu-card__description-block {
   display: flex;
-  justify-content: space-between;
-  padding-top: 0.3rem;
+  flex-direction: column;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 95%;
+  padding: 1rem;
+}
+.menu-card__description-block > p, .menu-card h4 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu-card__description-block > h4 {
+  padding-bottom: 0.5rem;
+}
+.menu-card__price-tag {
+  align-self: flex-end;
+  margin-bottom: 1rem;
+  margin-right: -3rem;
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .menu-card {
@@ -824,6 +884,13 @@ footer i.partnership-icon {
   .menu-card {
     width: 31.3%;
   }
+}
+.menu-card__checkbox {
+  right: 0;
+}
+.menu-card__check-icon {
+  color: white;
+  font-size: 2.5rem;
 }
 
 .button-container {
