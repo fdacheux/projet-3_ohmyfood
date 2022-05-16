@@ -171,18 +171,44 @@
     @include cards-shadow;
     border-radius: 15px;
     background-color: $white-colour;
-    padding: 1rem;
     opacity:0;
-    &__description-block>p, h4{
-        overflow: hidden;
-        padding-right: 1rem;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+    &__label {
+        display: flex;
+        height: 100%;
     }
+    &__icon-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        background-color: $colour-tertiary;
+        border-radius: 0 10px 10px 0;
+        min-width: 70px;
+        
+    }
+    
     &__description-block{
         display: flex;
-        justify-content: space-between;
-        padding-top: 0.3rem;
+        flex-direction: column;
+        @include text-ellipsis;
+        width: 95%;
+        padding: 1rem;
+    }
+
+    &__description-block>p, h4{
+        @include text-ellipsis;
+    }
+
+    &__description-block>h4{
+        padding-bottom: 0.5rem;
+    }
+
+    &__price-tag{
+        align-self: flex-end;
+        margin-bottom: 1rem;
+        margin-right: -3rem;
     }
     @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
         margin-right: 6vw;
@@ -190,6 +216,13 @@
     }
     @media screen and (min-width: map-get($breakpoints, large)) and (max-width: map-get($max-width, large)) {
         width: 31.3%;
+    }
+    &__checkbox{
+        right: 0;
+    }
+    &__check-icon {
+        color: white;
+        font-size: 2.5rem;
     }
 
 
