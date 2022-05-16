@@ -164,38 +164,9 @@
         width: 30%;
     }
 
-
 }
 
-.menu-card{
-    @include cards-shadow;
-    border-radius: 15px;
-    background-color: $white-colour;
-    padding: 1rem;
-    opacity:0;
-    &__description-block>p, h4{
-        overflow: hidden;
-        padding-right: 1rem;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-    &__description-block{
-        display: flex;
-        justify-content: space-between;
-        padding-top: 0.3rem;
-    }
-    @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
-        margin-right: 6vw;
-        width: 70%;
-    }
-    @media screen and (min-width: map-get($breakpoints, large)) and (max-width: map-get($max-width, large)) {
-        width: 31.3%;
-    }
-
-
-}
-
-.button-container{
+.button-container {
     display: flex;
     justify-content: center;
     width: 100%;
