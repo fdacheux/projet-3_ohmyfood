@@ -382,9 +382,7 @@ body {
   width: 100%;
   height: 100%;
   height: 100vh;
-  animation: play-animation;
-  animation-delay: 3s;
-  animation-fill-mode: both;
+  animation: 0.3s ease-out 2s both play-animation;
 }
 .loader-block__spinner {
   display: flex;
@@ -433,6 +431,12 @@ body {
 }
 
 @keyframes play-animation {
+  20% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0;
+  }
   100% {
     opacity: 0;
     z-index: -5;
