@@ -13,24 +13,24 @@ footer{
         }
     }
     & ul{
-        @media screen and (min-width: map-get($breakpoints, medium)){       
+        @media screen and (min-width: get-min-width(medium)){       
             display: flex;
             flex-direction: row;
             width: 100%;
             justify-content: space-between;
             padding-right: 4rem;
         }
-        @media screen and (min-width: map-get($breakpoints, x-large)){
+        @media screen and (min-width: get-min-width(x-large)){
             padding-top: 24px;
         }
     }
-    @media screen and (min-width: map-get($breakpoints, large)){       
+    @media screen and (min-width: get-min-width(large)){       
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 1rem 4rem;
     } 
-    @media screen and (min-width: map-get($breakpoints, x-large)){ 
+    @media screen and (min-width: get-min-width(x-large)){ 
         text-align: center;
         padding: 24px 10%;
     } 

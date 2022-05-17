@@ -159,7 +159,7 @@ input:checked{
         }
 }
 
-@media screen and (min-width: map-get($breakpoints, large)) {
+@media screen and (min-width: get-min-width(large)) {
         .heart-icon:hover{
                 &>.bg-icon {
                         transform: scale(1.1);
@@ -196,7 +196,7 @@ input:checked{
 }
 
 
-@media screen and (min-width: map-get($breakpoints, large)) {
+@media screen and (min-width: get-min-width(large)) {
         @for $i from 1 through $appearing-cards {
                 .appearing-card-#{$i}{
                         @include animation-properties(0.3s, $i, 0.15);

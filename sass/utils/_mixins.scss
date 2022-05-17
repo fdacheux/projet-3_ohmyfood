@@ -3,6 +3,35 @@
     justify-content: center;
 }
 
+@mixin media-queries-min-max ($breakpoint, $max) {
+    @media screen and (min-width: $breakpoint) and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin small-screens {
+    @include media-queries-min-max(get-min-width(small), get-max-width(small)) {
+        @content;
+    }
+}
+
+@mixin medium-screens {
+    @include media-queries-min-max(get-min-width(medium), get-max-width(medium)) {
+        @content;
+    }
+}
+
+@mixin large-screens {
+    @include media-queries-min-max(get-min-width(large), get-max-width(large)) {
+        @content;
+    }
+}
+
+@mixin x-large-screens {
+    @media screen and (min-width: get-min-width(x-large)) and (max-width: get-max-width(x-large)){
+        @content;
+    }
+}
 /* ------------ Cards ------------ */
 
 @mixin cards-shadow {

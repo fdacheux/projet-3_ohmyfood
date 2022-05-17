@@ -7,7 +7,7 @@
 
     /*Howto section style on tablets*/
 
-    @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)){
+    @include medium-screens {
         justify-content: space-around;
 
         &__header {
@@ -17,7 +17,7 @@
 
     /* Howto section style on large screens */
 
-    @media screen and (min-width: map-get($breakpoints, large)) {
+    @media screen and (min-width: get-min-width(large)) {
         margin-bottom: 2.5rem;
         }
     
@@ -31,7 +31,7 @@
 
         /*list style on tablets : centered column*/
 
-        @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+        @include medium-screens {
             width: 100%;
             align-items: center;
             margin-top: 1rem;
@@ -40,7 +40,7 @@
 
         /*list style on large screens : row*/
 
-        @media screen and (min-width: map-get($breakpoints, large)) {
+        @media screen and (min-width: get-min-width(large)) {
             flex-direction: row;
             justify-content: space-between;
         }
@@ -97,12 +97,12 @@
         
         /*List elements on tablets: not in full-width anymore*/
 
-        @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+        @include medium-screens {
             width: 60%;
         }
 
         /*List elements on large screen*/
-        @media  screen and (min-width: map-get($breakpoints, large)) {
+        @media  screen and (min-width: get-min-width(large)) {
             min-width: 30%;
         }
     }
