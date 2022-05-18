@@ -224,7 +224,7 @@ input:checked{
 
         &__checkbox {
                 &:checked {
-                        &+ label{
+                        &+ div{
                                 & i {
                                         @include rolling-check-icon;
                                 }
@@ -240,7 +240,7 @@ input:checked{
                 }
         }        
         @media screen and (min-width: map-get($breakpoints, large)) {           
-                &:hover>input:not(:checked) +label{
+                &:hover>input:not(:checked) +div{
                         & i{
                                 @include rolling-check-icon;
                         } 

@@ -103,12 +103,20 @@
 
 .menu-card{
     @include cards-shadow;
+    display: flex;
+    flex-direction: column-reverse;
     border-radius: 15px;
     background-color: $white-colour;
     opacity:0;
     overflow: hidden;
     position: relative;
-    &__label {
+    &__label{
+        z-index: 2;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+    &__body {
         display: flex;
         height: 100%;
     }
@@ -120,9 +128,7 @@
         background-color: $colour-tertiary;
         border-radius: 0 10px 10px 0;
         min-width: 70px;
-        
     }
-    
     &__description-block{
         display: flex;
         flex-direction: column;
