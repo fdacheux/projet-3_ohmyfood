@@ -9,6 +9,7 @@ $colour-button: (
 );
 
 $breakpoints: (
+    small: 576px,
     medium: 768px,
     large: 992px,
     x-large: 1200px,
@@ -21,6 +22,7 @@ $max-width: (
     large: 1199px,
     x-large: 1399px
 );
+
 
 /* Animations variables */
 

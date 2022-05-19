@@ -1,12 +1,12 @@
 .restaurants-section {
-    @media screen and (min-width: map-get($breakpoints, large)){
+    @media screen and (min-width: get-min-width(large)){
         display: flex;
         flex-direction: column;
     }
 }
 
 .restaurants-section__header {
-    @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+    @include medium-screens {
         text-align: center;
         margin-bottom: 2rem;
     }
@@ -19,15 +19,15 @@
     gap: 1.5rem;
     margin: 1.5rem 0 3rem 0;
 
-    @media screen and (min-width: map-get($breakpoints, medium)) {
+    @media screen and (min-width: get-min-width(medium)) {
         flex-flow: row wrap;
     }
 
-    @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+    @include medium-screens {
         justify-content: center;
     }
 
-    @media screen and (min-width: map-get($breakpoints, large)) {
+    @media screen and (min-width: get-min-width(large)) {
         justify-content: center;
         gap: 5rem;
     }

@@ -1,3 +1,13 @@
 @function delays-calculation ($increment, $multiplier){
     @return $delay+$increment*$multiplier;
 }
+
+@function get-min-width ($screen-size-name){
+    $minimum: map-get($breakpoints, $screen-size-name);
+    @return $minimum;
+}
+
+@function get-max-width ($screen-size-name){
+    $maximum: map-get($max-width, $screen-size-name);
+    @return $maximum;
+}

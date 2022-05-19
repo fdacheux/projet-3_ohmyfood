@@ -2,10 +2,10 @@
     box-shadow: 0px 4px 7px 2px darken($white-colour, 19%);
     border-radius: 50px;
     max-width: fit-content;
-    padding: 1.1rem 1.5rem;   
-    background: map-get($colour-button, button);
-    color: $white-colour;
     cursor: pointer;
+    background: map-get($colour-button, button);
+    padding: 1.1rem 1.5rem;   
+    color: $white-colour;
     transition: all 280ms ease-in;
     &.button--order {
         padding-left: 3rem;
@@ -14,10 +14,9 @@
 }
 
 .heart-icon {
+    position: relative;
     border: none;
     font-size: 30px;
-    position: relative;
-
     & i {
         z-index: -1;
         opacity: 1;

@@ -10,11 +10,11 @@
         width: 100%;
         background-color: $white-colour;
         
-        @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+        @include medium-screens {
             width: 40%;
         }
 
-        @media screen and (min-width: map-get($breakpoints, large)) {
+        @media screen and (min-width: get-min-width(large)) {
             width: 40%;
         }
 
@@ -30,11 +30,11 @@
         height: 150px;
         overflow: hidden;
 
-        @media screen and (min-width:576px) and (max-width: map-get($max-width, small)) {
+        @include small-screens {
             height: 200px;
         }
 
-        @media screen and (min-width: map-get($breakpoints, large)) {
+        @media screen and (min-width: get-min-width(large)) {
             max-height: 300px;
             height: 20vw;
         }        
@@ -80,18 +80,18 @@
         border-radius: 2px;
         background-color: $colour-tertiary;
         padding: 6px 11px; 
-        color: darken($colour-tertiary, 40%);
+        color: darken($colour-tertiary, 50%);
         
-        @media screen and (min-width: 575px) and (max-width: map-get($max-width, medium)){
+        @media screen and (min-width: get-min-width(small)) and (max-width: get-max-width(medium)){
             padding: 6px 11px;
             font-size: 1rem;
         }
 
-        @media screen and (min-width: map-get($breakpoints, large)) and (max-width: map-get($max-width, large)){
+        @include large-screens{
             font-size: 1.1rem;
         }
 
-        @media screen and (min-width: map-get($breakpoints, x-large)){
+        @media screen and (min-width: get-min-width(x-large)){
             font-size: 1.3rem;
         }
     }
@@ -103,12 +103,20 @@
 
 .menu-card{
     @include cards-shadow;
+    display: flex;
+    flex-direction: column-reverse;
     border-radius: 15px;
     background-color: $white-colour;
     opacity:0;
     overflow: hidden;
     position: relative;
-    &__label {
+    &__label{
+        z-index: 2;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+    &__body {
         display: flex;
         height: 100%;
     }
@@ -120,9 +128,7 @@
         background-color: $colour-tertiary;
         border-radius: 0 10px 10px 0;
         min-width: 70px;
-        
     }
-    
     &__description-block{
         display: flex;
         flex-direction: column;
@@ -144,11 +150,11 @@
         margin-bottom: 1rem;
         margin-right: -3rem;
     }
-    @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: map-get($max-width, medium)) {
+    @include medium-screens {
         margin-right: 6vw;
         width: 70%;
     }
-    @media screen and (min-width: map-get($breakpoints, large)) and (max-width: map-get($max-width, large)) {
+    @include large-screens {
         width: 31.3%;
     }
     &__checkbox{
