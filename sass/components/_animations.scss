@@ -24,10 +24,6 @@ body {
         }
 
         &__logo {
-                font-family: 'Shrikhand', cursive;
-                font-size: 35px;
-                color: black;
-                padding: 1rem;
                 @include bouncing-loader-animation (0s, logo-splashing);
         }
         
@@ -35,13 +31,13 @@ body {
                 height: 25px;
                 width: 25px;
                 border-radius: 100%; 
-                margin-bottom: -35px;
+                margin-bottom: -7px;
         }
 
         &__ball1{
                 background: $colour-primary;
                 @include bouncing-loader-animation (0s, bouncing-ball1);
-                margin-bottom: -45px;
+                margin-bottom: -10px;
         }
 
         &__ball2{
