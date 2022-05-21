@@ -2,28 +2,7 @@ footer{
     background-color: darken($white-colour, 79.3%);
     padding: 24px;
     color: $white-colour;
-    & li{
-        margin: 16px 0px;
-    }
-    & i{
-        width: 14px;
-        margin-right: 8px;
-        &.partnership-icon{
-            font-size: 13px;
-        }
-    }
-    & ul{
-        @media screen and (min-width: get-min-width(medium)){       
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            justify-content: space-between;
-            padding-right: 4rem;
-        }
-        @media screen and (min-width: get-min-width(x-large)){
-            padding-top: 24px;
-        }
-    }
+    
     @media screen and (min-width: get-min-width(large)){       
         display: flex;
         flex-direction: column;
@@ -35,4 +14,28 @@ footer{
         padding: 24px 10%;
     } 
 }
+
+.footer-list{
+    @media screen and (min-width: get-min-width(medium)){       
+        display: flex;
+        justify-content: space-between;
+        padding-right: 4rem;
+    }
+    @media screen and (min-width: get-min-width(x-large)){
+        padding-top: 24px;
+    }
+
+    &__element{
+        margin: 16px 0px;        
+    }
+    &__icon{
+        width: 14px;
+        margin-right: 8px;
+        &--partnership-icon{
+            font-size: 13px;
+        }        
+    }
+}
+
+
 

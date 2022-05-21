@@ -293,30 +293,6 @@ footer {
   padding: 24px;
   color: #fff;
 }
-footer li {
-  margin: 16px 0px;
-}
-footer i {
-  width: 14px;
-  margin-right: 8px;
-}
-footer i.partnership-icon {
-  font-size: 13px;
-}
-@media screen and (min-width: 768px) {
-  footer ul {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    padding-right: 4rem;
-  }
-}
-@media screen and (min-width: 1200px) {
-  footer ul {
-    padding-top: 24px;
-  }
-}
 @media screen and (min-width: 992px) {
   footer {
     display: flex;
@@ -330,6 +306,29 @@ footer i.partnership-icon {
     text-align: center;
     padding: 24px 10%;
   }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-list {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer-list {
+    padding-top: 24px;
+  }
+}
+.footer-list__element {
+  margin: 16px 0px;
+}
+.footer-list__icon {
+  width: 14px;
+  margin-right: 8px;
+}
+.footer-list__icon--partnership-icon {
+  font-size: 13px;
 }
 
 .button-container__button {
