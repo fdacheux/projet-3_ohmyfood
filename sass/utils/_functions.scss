@@ -11,3 +11,8 @@
     $maximum: map-get($max-width, $screen-size-name);
     @return $maximum;
 }
+
+@function white-lightness-reducer ($percentage) {
+    $new-color: scale-color($white-colour, $lightness: -$percentage);
+    @return $new-color
+}
