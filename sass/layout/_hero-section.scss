@@ -7,8 +7,8 @@
 }
 
 .location-block { 
-    box-shadow: 0px 8px 6px -6px white-lightness-reducer(19%) inset;   
-    background-color: white-lightness-reducer(8.2%);
+    box-shadow: 0px 8px 6px -6px white-colour-darkener(19%) inset;   
+    background-color: white-colour-darkener(8.2%);
     width: 100%;
     font-weight: 500;
     &__icon {

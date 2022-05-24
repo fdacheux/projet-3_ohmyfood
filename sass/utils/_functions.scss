@@ -12,7 +12,7 @@
     @return $maximum;
 }
 
-@function white-lightness-reducer ($percentage) {
+@function white-colour-darkener ($percentage) {
     $new-color: scale-color($white-colour, $lightness: -$percentage);
     @return $new-color
 }
