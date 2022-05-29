@@ -1,7 +1,13 @@
+/* ------------ General ------------ */
+
 @mixin center-flex-elements {
     align-items: center;
     justify-content: center;
 }
+
+
+
+/* ------------ Media-queries ------------ */
 
 @mixin media-queries-min-max ($breakpoint, $max) {
     @media screen and (min-width: $breakpoint) and (max-width: $max) {

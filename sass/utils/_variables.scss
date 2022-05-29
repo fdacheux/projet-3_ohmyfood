@@ -2,7 +2,7 @@ $colour-primary: #9356DC;
 $colour-secondary: #FF79DA;
 $colour-tertiary: #99E2D0;
 $white-colour: #fff;
-$sections-background: darken($white-colour, 4%);
+$sections-background: scale-color($white-colour, $lightness: -3.5%);
 $colour-button: (
     button: linear-gradient(170deg, $colour-secondary 0%, $colour-primary 99%),
     fav-button: linear-gradient(5deg, $colour-secondary 0%, $colour-primary 99%)

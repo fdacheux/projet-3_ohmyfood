@@ -1,27 +1,26 @@
-footer{
-    background-color: darken($white-colour, 79.3%);
+.footer-section {
+    background-color: white-colour-darkener(79.2%);
     padding: 24px;
     color: $white-colour;
-    & li{
-        margin: 16px 0px;
+
+    &__list-element {
+        margin: 8px 0px;        
     }
-    & i{
+
+    &__icon {
         width: 14px;
         margin-right: 8px;
-        &.partnership-icon{
+        &--partnership-icon {
             font-size: 13px;
-        }
-    }
-    & ul{
-        @media screen and (min-width: get-min-width(medium)){       
+        }        
+    }   
+    
+    /* Responsive */
+    @media screen and (min-width: get-min-width(medium)){  
+        &__list {     
             display: flex;
-            flex-direction: row;
-            width: 100%;
             justify-content: space-between;
             padding-right: 4rem;
-        }
-        @media screen and (min-width: get-min-width(x-large)){
-            padding-top: 24px;
         }
     }
     @media screen and (min-width: get-min-width(large)){       
@@ -32,7 +31,14 @@ footer{
     } 
     @media screen and (min-width: get-min-width(x-large)){ 
         text-align: center;
-        padding: 24px 10%;
+        padding: 1rem 8rem;
+
+        &__list{
+            padding-top: 1rem;
+        }
     } 
 }
+
+
+
 
