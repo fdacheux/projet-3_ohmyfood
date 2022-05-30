@@ -1,6 +1,7 @@
 .button-container__button {
     box-shadow: 0px 4px 7px 2px white-colour-darkener(19%);
     border-radius: 50px;
+    max-width: -moz-fit-content;
     max-width: fit-content;
     cursor: pointer;
     background: map-get($colour-button, button);
@@ -37,8 +38,8 @@
         transform: scale(0);
         /*coloring icon */
         background: map-get($colour-button, fav-button);
-        background-clip: text;
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
         transition: transform 400ms ease-in;
     }

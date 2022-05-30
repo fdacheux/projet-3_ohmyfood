@@ -334,6 +334,7 @@ h3 {
 .button-container__button {
   box-shadow: 0px 4px 7px 2px #cfcfcf;
   border-radius: 50px;
+  max-width: -moz-fit-content;
   max-width: fit-content;
   cursor: pointer;
   background: linear-gradient(170deg, #FF79DA 0%, #9356DC 99%);
@@ -370,8 +371,8 @@ h3 {
   transform: scale(0);
   /*coloring icon */
   background: linear-gradient(5deg, #FF79DA 0%, #9356DC 99%);
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: transform 400ms ease-in;
 }
