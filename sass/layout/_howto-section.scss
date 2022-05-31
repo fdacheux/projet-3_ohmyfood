@@ -23,7 +23,7 @@
     
     /*How to steps container and responsive*/
 
-    & ol {
+    &__ordered-list {
         display: flex;
         flex-direction: column;
         counter-reset: howto-list; /*reset number for ordered list */
