@@ -30,14 +30,9 @@
     position: relative;
     border: none;
     font-size: 30px;
-    & i {
-        z-index: -1;
-        opacity: 1;
-        transition: all 500ms ease-in-out;
-    }
 
     /*Injection de l'élément pour l'animation du coeur*/
-    & .bg-icon {
+    &__full {
         /*positionning bg-button */
         z-index: 1;
         position: absolute;
@@ -54,5 +49,22 @@
         background-clip: text;
         -webkit-text-fill-color: transparent;
         transition: transform 400ms ease-in;
+    }
+}
+
+
+/* ------------ Favourite icon animation ------------ */
+
+input:checked{
+    &  +label>.heart-icon__full {
+            transform: scale(1.1);
+    }
+}
+
+@media screen and (min-width: get-min-width(large)) {
+    .heart-icon:hover{
+            &>.heart-icon__full {
+                    transform: scale(1.1);
+            }
     }
 }

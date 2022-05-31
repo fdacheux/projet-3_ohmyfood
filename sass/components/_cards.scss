@@ -20,11 +20,6 @@
 
     }
 
-    .heart-icon-container {
-        position: absolute;
-        bottom: 18px;
-        right: 16px;
-    }
 
     &__photo-container{
         height: 150px;
@@ -73,6 +68,13 @@
 
     }
 
+    /* Button favourite homepage cards only */
+    &__heart-icon-container{
+        position: absolute;
+        bottom: 18px;
+        right: 16px;
+    }
+
     &__new-info {
         position: absolute;
         right: 4%;
@@ -97,6 +99,7 @@
     }
     
 }
+
 
 
 /* ------------ Menu-pages cards ------------ */

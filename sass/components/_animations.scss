@@ -74,24 +74,6 @@
         }
 } 
 
-      
-
-
-/* ------------ Favourite icon animation ------------ */
-
-input:checked{
-        &  +label>.bg-icon {
-                transform: scale(1.1);
-        }
-}
-
-@media screen and (min-width: get-min-width(large)) {
-        .heart-icon:hover{
-                &>.bg-icon {
-                        transform: scale(1.1);
-                }
-        }
-}
 
 
 

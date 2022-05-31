@@ -366,12 +366,7 @@ h3 {
   font-size: 30px;
   /*Injection de l'élément pour l'animation du coeur*/
 }
-.heart-icon i {
-  z-index: -1;
-  opacity: 1;
-  transition: all 500ms ease-in-out;
-}
-.heart-icon .bg-icon {
+.heart-icon__full {
   /*positionning bg-button */
   z-index: 1;
   position: absolute;
@@ -390,6 +385,16 @@ h3 {
   transition: transform 400ms ease-in;
 }
 
+/* ------------ Favourite icon animation ------------ */
+input:checked + label > .heart-icon__full {
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 992px) {
+  .heart-icon:hover > .heart-icon__full {
+    transform: scale(1.1);
+  }
+}
 /* ------------ Homepage load animation ------------ */
 @keyframes play-animation {
   20% {
@@ -457,16 +462,6 @@ h3 {
     animation-timing-function: ease-in;
   }
 }
-/* ------------ Favourite icon animation ------------ */
-input:checked + label > .bg-icon {
-  transform: scale(1.1);
-}
-
-@media screen and (min-width: 992px) {
-  .heart-icon:hover > .bg-icon {
-    transform: scale(1.1);
-  }
-}
 /* ------------ Menu-pages load animation ------------ */
 @keyframes appear {
   0% {
@@ -482,6 +477,9 @@ input:checked + label > .bg-icon {
   }
 }
 /* ------------ Homepage restaurants cards------------ */
+.restaurants-block {
+  /* Button favourite homepage cards only */
+}
 .restaurants-block article {
   position: relative;
   overflow: hidden;
@@ -499,11 +497,6 @@ input:checked + label > .bg-icon {
   .restaurants-block article {
     width: 40%;
   }
-}
-.restaurants-block .heart-icon-container {
-  position: absolute;
-  bottom: 18px;
-  right: 16px;
 }
 .restaurants-block__photo-container {
   height: 150px;
@@ -544,6 +537,11 @@ input:checked + label > .bg-icon {
   max-height: 80px;
   min-height: 50px;
   padding: 0.8rem 1rem;
+}
+.restaurants-block__heart-icon-container {
+  position: absolute;
+  bottom: 18px;
+  right: 16px;
 }
 .restaurants-block__new-info {
   position: absolute;
