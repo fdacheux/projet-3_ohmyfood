@@ -1,3 +1,5 @@
+/* ------------ Buttons ------------ */
+
 .button-container__button {
     box-shadow: 0px 4px 7px 2px white-colour-darkener(19%);
     border-radius: 50px;
@@ -8,11 +10,21 @@
     padding: 1.1rem 1.5rem;   
     color: $white-colour;
     transition: all 280ms ease-in;
+
     &.button--order {
         padding-left: 3rem;
         padding-right: 3rem;
     }
+
+    /* ------ Buttons animation ------ */
+
+    &:hover {
+        opacity:0.85;
+        box-shadow: 0px 6px 5px 3px darken($white-colour, 25%);
+    }
 }
+
+/* ------------ Favourite icon ------------ */
 
 .heart-icon {
     position: relative;

@@ -110,25 +110,23 @@
     opacity:0;
     overflow: hidden;
     position: relative;
+    
     &__label{
         z-index: 2;
         position: absolute;
         height: 100%;
         width: 100%;
     }
+    
+    &__checkbox{
+        right: 0;
+    }
+
     &__body {
         display: flex;
         height: 100%;
     }
-    &__icon-box {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        background-color: $colour-tertiary;
-        border-radius: 0 10px 10px 0;
-        min-width: 70px;
-    }
+    
     &__description-block{
         display: flex;
         flex-direction: column;
@@ -149,21 +147,82 @@
         align-self: flex-end;
         margin-bottom: 1rem;
         margin-right: -3rem;
+
+        /*Animation : properties */
+        @include linear-animations-transition(all, 0.4s);
     }
+
+    &__icon-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        background-color: $colour-tertiary;
+        border-radius: 0 10px 10px 0;
+        min-width: 70px;
+
+        /*Animation : initial state*/
+        transform: scaleX(0);
+        transform-origin: right;
+        @include linear-animations-transition(transform, 0.4s);
+    }
+    
+    &__check-icon {
+        color: white;
+        font-size: 2.5rem;
+
+        /*Animation : initial state*/
+        transform: translateX(70px);
+        @include linear-animations-transition(transform, 0.3s);
+        transition-delay: 0.1s;
+    }
+    
     @include medium-screens {
         margin-right: 6vw;
         width: 70%;
     }
+
     @include large-screens {
         width: 31.3%;
     }
-    &__checkbox{
-        right: 0;
-    }
-    &__check-icon {
-        color: white;
-        font-size: 2.5rem;
-    }
 
 
+}
+
+/* ------------ Menu-cards check animation ------------ */
+
+.menu-card {
+
+    &__checkbox {
+            &:checked {
+                    &+ div{
+                            & i {
+                                    @include rolling-check-icon;
+                            }
+                            & .menu-card{
+                                    &__icon-box {
+                                            @include appearing-icon-box;
+                                    }
+                                    &__price-tag {
+                                            @include moving-price-tag;
+                                    }
+                            }    
+                    } 
+            }
+    }        
+    @media screen and (min-width: map-get($breakpoints, large)) {           
+            &:hover>input:not(:checked) +div{
+                    & i{
+                            @include rolling-check-icon;
+                    } 
+                    & .menu-card{
+                            &__icon-box {
+                                    @include appearing-icon-box;                               
+                            }     
+                            &__price-tag{
+                                    @include moving-price-tag;
+                            }                 
+                    }
+            }
+    }
 }

@@ -166,6 +166,25 @@
 
 }
 
+/* ------------ Create cards selectors and their content ------------ */
+
+@for $i from 1 through $appearing-cards {
+    .appearing-card-#{$i}{
+            @include animation-properties(0.5s, $i, 0.22);
+    }    
+}
+
+/* Sets diffent animation time for horizontal alignment of cards */
+
+@media screen and (min-width: get-min-width(large)) {
+    @for $i from 1 through $appearing-cards {
+            .appearing-card-#{$i}{
+                    @include animation-properties(0.3s, $i, 0.15);
+        }    
+    }
+}
+
+
 .button-container {
     display: flex;
     justify-content: center;
@@ -173,4 +192,6 @@
     margin-top: 3vw;
     margin-bottom: 4vw;
 }
+
+
 

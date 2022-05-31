@@ -82,7 +82,7 @@
         /*Create an empty transparent element below li for animation purpose*/
 
         &::after {
-            z-index: -1; /*last on the stack */
+            z-index: -1; 
             position: absolute;
             top: 0;
             right: 0;
@@ -93,6 +93,17 @@
             opacity: 0; 
             content: "";
             transition: opacity 250ms;
+        }
+
+        /* ------------ Howto section hovering steps animation ------------ */
+        
+        &:hover {
+            & i{
+                color: $colour-primary;
+            }
+            &::after{
+                opacity: 0.1;
+            }
         }
         
         /*List elements on tablets: not in full-width anymore*/
@@ -108,4 +119,10 @@
     }
 
 }
+
+
+
+
+
+
 
