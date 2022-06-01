@@ -1,29 +1,22 @@
+/* ------------ All cards------------ */
+
+.card {
+    overflow: hidden;
+    position: relative;
+    @include cards-shadow;
+    border-radius: 15px;
+    background-color: $white-colour;
+}
+
 /* ------------ Homepage restaurants cards------------ */
 
-.restaurants-block {
+.restaurant-card {
     
-    & article {
-        position: relative;
-        overflow: hidden;
-        @include cards-shadow;
-        border-radius: 15px;
-        width: 100%;
-        background-color: $white-colour;
+
+    width: 100%;
         
-        @include medium-screens {
-            width: 40%;
-        }
-
-        @media screen and (min-width: get-min-width(large)) {
-            width: 40%;
-        }
-
-    }
-
-    .heart-icon-container {
-        position: absolute;
-        bottom: 18px;
-        right: 16px;
+    @media screen and (min-width: get-min-width(medium)) {
+        width: 40%;
     }
 
     &__photo-container{
@@ -40,30 +33,30 @@
         }        
     }
     
-    &__card-img {
+    &__img {
         object-fit: cover;
         height: 100%;
         width: 100%;
         
-        &.img--centered1{
+        &--centered1{
             object-position: 50% 50%;
         }
 
-        &.img--centered2 {
+        &--centered2 {
             object-position: 50% 58%;
         }
 
-        &.img--centered3{
+        &--centered3{
             object-position: 50% 75%;
         }
 
-        &.img--centered4{
+        &--centered4{
             object-position: 50% 80%;
         }
     }
 
 
-    &__card-body {
+    &__body {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -71,6 +64,13 @@
         min-height: 50px;
         padding: 0.8rem 1rem;
 
+    }
+
+    /* Button favourite homepage cards only */
+    &__heart-icon-container{
+        position: absolute;
+        bottom: 18px;
+        right: 16px;
     }
 
     &__new-info {
@@ -99,36 +99,31 @@
 }
 
 
+
 /* ------------ Menu-pages cards ------------ */
 
 .menu-card{
-    @include cards-shadow;
     display: flex;
     flex-direction: column-reverse;
-    border-radius: 15px;
-    background-color: $white-colour;
     opacity:0;
-    overflow: hidden;
-    position: relative;
+    // color: blueviolet;
+    
     &__label{
         z-index: 2;
         position: absolute;
         height: 100%;
         width: 100%;
     }
+    
+    &__checkbox{
+        right: 0;
+    }
+
     &__body {
         display: flex;
         height: 100%;
     }
-    &__icon-box {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        background-color: $colour-tertiary;
-        border-radius: 0 10px 10px 0;
-        min-width: 70px;
-    }
+    
     &__description-block{
         display: flex;
         flex-direction: column;
@@ -149,21 +144,82 @@
         align-self: flex-end;
         margin-bottom: 1rem;
         margin-right: -3rem;
+
+        /*Animation : properties */
+        @include linear-animations-transition(all, 0.4s);
     }
+
+    &__icon-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        background-color: $colour-tertiary;
+        border-radius: 0 10px 10px 0;
+        min-width: 70px;
+
+        /*Animation : initial state*/
+        transform: scaleX(0);
+        transform-origin: right;
+        @include linear-animations-transition(transform, 0.4s);
+    }
+    
+    &__check-icon {
+        color: white;
+        font-size: 2.5rem;
+
+        /*Animation : initial state*/
+        transform: translateX(70px);
+        @include linear-animations-transition(transform, 0.3s);
+        transition-delay: 0.1s;
+    }
+    
     @include medium-screens {
         margin-right: 6vw;
         width: 70%;
     }
+
     @include large-screens {
         width: 31.3%;
     }
-    &__checkbox{
-        right: 0;
-    }
-    &__check-icon {
-        color: white;
-        font-size: 2.5rem;
-    }
 
 
+}
+
+/* ------------ Menu-cards check animation ------------ */
+
+.menu-card {
+
+    &__checkbox {
+            &:checked {
+                    &+ div{
+                            & i {
+                                    @include rolling-check-icon;
+                            }
+                            & .menu-card{
+                                    &__icon-box {
+                                            @include appearing-icon-box;
+                                    }
+                                    &__price-tag {
+                                            @include moving-price-tag;
+                                    }
+                            }    
+                    } 
+            }
+    }        
+    @media screen and (min-width: map-get($breakpoints, large)) {           
+            &:hover>input:not(:checked) +div{
+                    & i{
+                            @include rolling-check-icon;
+                    } 
+                    & .menu-card{
+                            &__icon-box {
+                                    @include appearing-icon-box;                               
+                            }     
+                            &__price-tag{
+                                    @include moving-price-tag;
+                            }                 
+                    }
+            }
+    }
 }

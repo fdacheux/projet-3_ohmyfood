@@ -171,7 +171,7 @@ h3 {
     margin-bottom: 2.5rem;
   }
 }
-.howto-section ol {
+.howto-section__ordered-list {
   display: flex;
   flex-direction: column;
   counter-reset: howto-list;
@@ -181,7 +181,7 @@ h3 {
   /*list style on large screens : row*/
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .howto-section ol {
+  .howto-section__ordered-list {
     width: 100%;
     align-items: center;
     margin-top: 1rem;
@@ -189,7 +189,7 @@ h3 {
   }
 }
 @media screen and (min-width: 992px) {
-  .howto-section ol {
+  .howto-section__ordered-list {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -209,6 +209,7 @@ h3 {
   /* element 1 of stack for opacity animation on hover */
   /*Number for list elements: style, position and content*/
   /*Create an empty transparent element below li for animation purpose*/
+  /* ------------ Howto section hovering steps animation ------------ */
   /*List elements on tablets: not in full-width anymore*/
   /*List elements on large screen*/
 }
@@ -230,7 +231,6 @@ h3 {
 }
 .howto-section__step::after {
   z-index: -1;
-  /*last on the stack */
   position: absolute;
   top: 0;
   right: 0;
@@ -241,6 +241,12 @@ h3 {
   opacity: 0;
   content: "";
   transition: opacity 250ms;
+}
+.howto-section__step:hover i {
+  color: #9356DC;
+}
+.howto-section__step:hover::after {
+  opacity: 0.1;
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .howto-section__step {
@@ -297,7 +303,7 @@ h3 {
   /* Responsive */
 }
 .footer-section__list-element {
-  margin: 8px 0px;
+  margin: 10px 0px;
 }
 .footer-section__icon {
   width: 14px;
@@ -331,33 +337,36 @@ h3 {
   }
 }
 
+/* ------------ Buttons ------------ */
 .button-container__button {
   box-shadow: 0px 4px 7px 2px #cfcfcf;
   border-radius: 50px;
+  max-width: -moz-fit-content;
   max-width: fit-content;
   cursor: pointer;
   background: linear-gradient(170deg, #FF79DA 0%, #9356DC 99%);
   padding: 1.1rem 1.5rem;
   color: #fff;
   transition: all 280ms ease-in;
+  /* ------ Buttons animation ------ */
 }
 .button-container__button.button--order {
   padding-left: 3rem;
   padding-right: 3rem;
 }
+.button-container__button:hover {
+  opacity: 0.85;
+  box-shadow: 0px 6px 5px 3px #bfbfbf;
+}
 
+/* ------------ Favourite icon ------------ */
 .heart-icon {
   position: relative;
   border: none;
   font-size: 30px;
   /*Injection de l'élément pour l'animation du coeur*/
 }
-.heart-icon i {
-  z-index: -1;
-  opacity: 1;
-  transition: all 500ms ease-in-out;
-}
-.heart-icon .bg-icon {
+.heart-icon__full {
   /*positionning bg-button */
   z-index: 1;
   position: absolute;
@@ -370,72 +379,23 @@ h3 {
   transform: scale(0);
   /*coloring icon */
   background: linear-gradient(5deg, #FF79DA 0%, #9356DC 99%);
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: transform 400ms ease-in;
 }
 
+/* ------------ Favourite icon animation ------------ */
+input:checked + label > .heart-icon__full {
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 992px) {
+  .heart-icon:hover > .heart-icon__full {
+    transform: scale(1.1);
+  }
+}
 /* ------------ Homepage load animation ------------ */
-body {
-  position: relative;
-}
-
-.loader-block {
-  display: flex;
-  flex-direction: column;
-  z-index: 2;
-  position: fixed;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.9);
-  width: 100%;
-  height: 100%;
-  height: 100vh;
-  animation: 0.3s ease-out 2s both play-animation;
-}
-.loader-block__spinner {
-  display: flex;
-  gap: 12px;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-.loader-block__logo {
-  animation-duration: 1.1s;
-  animation-delay: 0s;
-  animation-iteration-count: 3;
-  animation-name: logo-splashing;
-}
-.loader-block__balls {
-  height: 25px;
-  width: 25px;
-  border-radius: 100%;
-  margin-bottom: -7px;
-}
-.loader-block__ball1 {
-  background: #9356DC;
-  animation-duration: 1.1s;
-  animation-delay: 0s;
-  animation-iteration-count: 3;
-  animation-name: bouncing-ball1;
-  margin-bottom: -10px;
-}
-.loader-block__ball2 {
-  background-color: #FF79DA;
-  animation-duration: 1.1s;
-  animation-delay: 0.1s;
-  animation-iteration-count: 3;
-  animation-name: bouncing-ball2and3;
-}
-.loader-block__ball3 {
-  background: #99E2D0;
-  animation-duration: 1.1s;
-  animation-delay: 0.05s;
-  animation-iteration-count: 3;
-  animation-name: bouncing-ball2and3;
-}
-
 @keyframes play-animation {
   20% {
     opacity: 0.5;
@@ -502,30 +462,6 @@ body {
     animation-timing-function: ease-in;
   }
 }
-/* ------------ Button animation ------------ */
-.button-container__button:hover {
-  opacity: 0.85;
-  box-shadow: 0px 6px 5px 3px #bfbfbf;
-}
-
-/* ------------ Howto section hovering steps animation ------------ */
-.howto-section__step:hover i {
-  color: #9356DC;
-}
-.howto-section__step:hover::after {
-  opacity: 0.1;
-}
-
-/* ------------ Favourite icon animation ------------ */
-input:checked + label > .bg-icon {
-  transform: scale(1.1);
-}
-
-@media screen and (min-width: 992px) {
-  .heart-icon:hover > .bg-icon {
-    transform: scale(1.1);
-  }
-}
 /* ------------ Menu-pages load animation ------------ */
 @keyframes appear {
   0% {
@@ -540,199 +476,58 @@ input:checked + label > .bg-icon {
     opacity: 1;
   }
 }
-.appearing-card-1 {
-  animation: 0.5s ease-in-out 0.22s 1 appear;
-  animation-fill-mode: both;
-}
-
-.appearing-card-2 {
-  animation: 0.5s ease-in-out 0.44s 1 appear;
-  animation-fill-mode: both;
-}
-
-.appearing-card-3 {
-  animation: 0.5s ease-in-out 0.66s 1 appear;
-  animation-fill-mode: both;
-}
-
-.appearing-card-4 {
-  animation: 0.5s ease-in-out 0.88s 1 appear;
-  animation-fill-mode: both;
-}
-
-.appearing-card-5 {
-  animation: 0.5s ease-in-out 1.1s 1 appear;
-  animation-fill-mode: both;
-}
-
-.appearing-card-6 {
-  animation: 0.5s ease-in-out 1.32s 1 appear;
-  animation-fill-mode: both;
-}
-
-.appearing-card-7 {
-  animation: 0.5s ease-in-out 1.54s 1 appear;
-  animation-fill-mode: both;
-}
-
-.appearing-card-8 {
-  animation: 0.5s ease-in-out 1.76s 1 appear;
-  animation-fill-mode: both;
-}
-
-.appearing-card-9 {
-  animation: 0.5s ease-in-out 1.98s 1 appear;
-  animation-fill-mode: both;
-}
-
-.appearing-card-10 {
-  animation: 0.5s ease-in-out 2.2s 1 appear;
-  animation-fill-mode: both;
-}
-
-@media screen and (min-width: 992px) {
-  .appearing-card-1 {
-    animation: 0.3s ease-in-out 0.15s 1 appear;
-    animation-fill-mode: both;
-  }
-
-  .appearing-card-2 {
-    animation: 0.3s ease-in-out 0.3s 1 appear;
-    animation-fill-mode: both;
-  }
-
-  .appearing-card-3 {
-    animation: 0.3s ease-in-out 0.45s 1 appear;
-    animation-fill-mode: both;
-  }
-
-  .appearing-card-4 {
-    animation: 0.3s ease-in-out 0.6s 1 appear;
-    animation-fill-mode: both;
-  }
-
-  .appearing-card-5 {
-    animation: 0.3s ease-in-out 0.75s 1 appear;
-    animation-fill-mode: both;
-  }
-
-  .appearing-card-6 {
-    animation: 0.3s ease-in-out 0.9s 1 appear;
-    animation-fill-mode: both;
-  }
-
-  .appearing-card-7 {
-    animation: 0.3s ease-in-out 1.05s 1 appear;
-    animation-fill-mode: both;
-  }
-
-  .appearing-card-8 {
-    animation: 0.3s ease-in-out 1.2s 1 appear;
-    animation-fill-mode: both;
-  }
-
-  .appearing-card-9 {
-    animation: 0.3s ease-in-out 1.35s 1 appear;
-    animation-fill-mode: both;
-  }
-
-  .appearing-card-10 {
-    animation: 0.3s ease-in-out 1.5s 1 appear;
-    animation-fill-mode: both;
-  }
-}
-/* ------------ Menu-cards check animation ------------ */
-.menu-card__icon-box {
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s linear;
-}
-.menu-card__check-icon {
-  transform: translateX(70px);
-  transition: transform 0.3s linear;
-  transition-delay: 0.1s;
-}
-.menu-card__price-tag {
-  transition: all 0.4s linear;
-}
-.menu-card__checkbox:checked + div i {
-  transform: translateX(0) rotate(-360deg);
-}
-.menu-card__checkbox:checked + div .menu-card__icon-box {
-  transform: scaleX(1);
-}
-.menu-card__checkbox:checked + div .menu-card__price-tag {
-  margin-right: 1rem;
-}
-@media screen and (min-width: 992px) {
-  .menu-card:hover > input:not(:checked) + div i {
-    transform: translateX(0) rotate(-360deg);
-  }
-  .menu-card:hover > input:not(:checked) + div .menu-card__icon-box {
-    transform: scaleX(1);
-  }
-  .menu-card:hover > input:not(:checked) + div .menu-card__price-tag {
-    margin-right: 1rem;
-  }
+/* ------------ All cards------------ */
+.card {
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 4px 10px 2px #d9d9d9;
+  border-radius: 15px;
+  background-color: #fff;
 }
 
 /* ------------ Homepage restaurants cards------------ */
-.restaurants-block article {
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0px 4px 10px 2px #d9d9d9;
-  border-radius: 15px;
+.restaurant-card {
   width: 100%;
-  background-color: #fff;
+  /* Button favourite homepage cards only */
 }
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .restaurants-block article {
+@media screen and (min-width: 768px) {
+  .restaurant-card {
     width: 40%;
   }
 }
-@media screen and (min-width: 992px) {
-  .restaurants-block article {
-    width: 40%;
-  }
-}
-.restaurants-block .heart-icon-container {
-  position: absolute;
-  bottom: 18px;
-  right: 16px;
-}
-.restaurants-block__photo-container {
+.restaurant-card__photo-container {
   height: 150px;
   overflow: hidden;
 }
 @media screen and (min-width: 576px) and (max-width: 767px) {
-  .restaurants-block__photo-container {
+  .restaurant-card__photo-container {
     height: 200px;
   }
 }
 @media screen and (min-width: 992px) {
-  .restaurants-block__photo-container {
+  .restaurant-card__photo-container {
     max-height: 300px;
     height: 20vw;
   }
 }
-.restaurants-block__card-img {
+.restaurant-card__img {
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
-.restaurants-block__card-img.img--centered1 {
+.restaurant-card__img--centered1 {
   object-position: 50% 50%;
 }
-.restaurants-block__card-img.img--centered2 {
+.restaurant-card__img--centered2 {
   object-position: 50% 58%;
 }
-.restaurants-block__card-img.img--centered3 {
+.restaurant-card__img--centered3 {
   object-position: 50% 75%;
 }
-.restaurants-block__card-img.img--centered4 {
+.restaurant-card__img--centered4 {
   object-position: 50% 80%;
 }
-.restaurants-block__card-body {
+.restaurant-card__body {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -740,7 +535,12 @@ input:checked + label > .bg-icon {
   min-height: 50px;
   padding: 0.8rem 1rem;
 }
-.restaurants-block__new-info {
+.restaurant-card__heart-icon-container {
+  position: absolute;
+  bottom: 18px;
+  right: 16px;
+}
+.restaurant-card__new-info {
   position: absolute;
   right: 4%;
   top: 5%;
@@ -750,32 +550,27 @@ input:checked + label > .bg-icon {
   color: #1b6150;
 }
 @media screen and (min-width: 576px) and (max-width: 991px) {
-  .restaurants-block__new-info {
+  .restaurant-card__new-info {
     padding: 6px 11px;
     font-size: 1rem;
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .restaurants-block__new-info {
+  .restaurant-card__new-info {
     font-size: 1.1rem;
   }
 }
 @media screen and (min-width: 1200px) {
-  .restaurants-block__new-info {
+  .restaurant-card__new-info {
     font-size: 1.3rem;
   }
 }
 
 /* ------------ Menu-pages cards ------------ */
 .menu-card {
-  box-shadow: 0px 4px 10px 2px #d9d9d9;
   display: flex;
   flex-direction: column-reverse;
-  border-radius: 15px;
-  background-color: #fff;
   opacity: 0;
-  overflow: hidden;
-  position: relative;
 }
 .menu-card__label {
   z-index: 2;
@@ -783,18 +578,12 @@ input:checked + label > .bg-icon {
   height: 100%;
   width: 100%;
 }
+.menu-card__checkbox {
+  right: 0;
+}
 .menu-card__body {
   display: flex;
   height: 100%;
-}
-.menu-card__icon-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  background-color: #99E2D0;
-  border-radius: 0 10px 10px 0;
-  min-width: 70px;
 }
 .menu-card__description-block {
   display: flex;
@@ -817,6 +606,29 @@ input:checked + label > .bg-icon {
   align-self: flex-end;
   margin-bottom: 1rem;
   margin-right: -3rem;
+  /*Animation : properties */
+  transition: all 0.4s linear;
+}
+.menu-card__icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: #99E2D0;
+  border-radius: 0 10px 10px 0;
+  min-width: 70px;
+  /*Animation : initial state*/
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s linear;
+}
+.menu-card__check-icon {
+  color: white;
+  font-size: 2.5rem;
+  /*Animation : initial state*/
+  transform: translateX(70px);
+  transition: transform 0.3s linear;
+  transition-delay: 0.1s;
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .menu-card {
@@ -829,12 +641,87 @@ input:checked + label > .bg-icon {
     width: 31.3%;
   }
 }
-.menu-card__checkbox {
-  right: 0;
+
+/* ------------ Menu-cards check animation ------------ */
+.menu-card__checkbox:checked + div i {
+  transform: translateX(0) rotate(-360deg);
 }
-.menu-card__check-icon {
-  color: white;
-  font-size: 2.5rem;
+.menu-card__checkbox:checked + div .menu-card__icon-box {
+  transform: scaleX(1);
+}
+.menu-card__checkbox:checked + div .menu-card__price-tag {
+  margin-right: 1rem;
+}
+@media screen and (min-width: 992px) {
+  .menu-card:hover > input:not(:checked) + div i {
+    transform: translateX(0) rotate(-360deg);
+  }
+  .menu-card:hover > input:not(:checked) + div .menu-card__icon-box {
+    transform: scaleX(1);
+  }
+  .menu-card:hover > input:not(:checked) + div .menu-card__price-tag {
+    margin-right: 1rem;
+  }
+}
+
+/* ------------ Homepage load animation ------------ */
+body {
+  position: relative;
+}
+
+.loader-block {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  animation: 0.3s ease-out 2s both play-animation;
+}
+.loader-block__spinner {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.loader-block__logo {
+  animation-duration: 1.1s;
+  animation-delay: 0s;
+  animation-iteration-count: 3;
+  animation-name: logo-splashing;
+}
+.loader-block__balls {
+  height: 25px;
+  width: 25px;
+  border-radius: 100%;
+  margin-bottom: -7px;
+}
+.loader-block__ball1 {
+  background: #9356DC;
+  animation-duration: 1.1s;
+  animation-delay: 0s;
+  animation-iteration-count: 3;
+  animation-name: bouncing-ball1;
+  margin-bottom: -10px;
+}
+.loader-block__ball2 {
+  background-color: #FF79DA;
+  animation-duration: 1.1s;
+  animation-delay: 0.1s;
+  animation-iteration-count: 3;
+  animation-name: bouncing-ball2and3;
+}
+.loader-block__ball3 {
+  background: #99E2D0;
+  animation-duration: 1.1s;
+  animation-delay: 0.05s;
+  animation-iteration-count: 3;
+  animation-name: bouncing-ball2and3;
 }
 
 .menus-section {
@@ -1049,6 +936,109 @@ input:checked + label > .bg-icon {
   }
 }
 
+/* ------------ Create cards selectors and their content ------------ */
+.appearing-card-1 {
+  animation: 0.5s ease-in-out 0.22s 1 appear;
+  animation-fill-mode: both;
+}
+
+.appearing-card-2 {
+  animation: 0.5s ease-in-out 0.44s 1 appear;
+  animation-fill-mode: both;
+}
+
+.appearing-card-3 {
+  animation: 0.5s ease-in-out 0.66s 1 appear;
+  animation-fill-mode: both;
+}
+
+.appearing-card-4 {
+  animation: 0.5s ease-in-out 0.88s 1 appear;
+  animation-fill-mode: both;
+}
+
+.appearing-card-5 {
+  animation: 0.5s ease-in-out 1.1s 1 appear;
+  animation-fill-mode: both;
+}
+
+.appearing-card-6 {
+  animation: 0.5s ease-in-out 1.32s 1 appear;
+  animation-fill-mode: both;
+}
+
+.appearing-card-7 {
+  animation: 0.5s ease-in-out 1.54s 1 appear;
+  animation-fill-mode: both;
+}
+
+.appearing-card-8 {
+  animation: 0.5s ease-in-out 1.76s 1 appear;
+  animation-fill-mode: both;
+}
+
+.appearing-card-9 {
+  animation: 0.5s ease-in-out 1.98s 1 appear;
+  animation-fill-mode: both;
+}
+
+.appearing-card-10 {
+  animation: 0.5s ease-in-out 2.2s 1 appear;
+  animation-fill-mode: both;
+}
+
+/* Sets diffent animation time for horizontal alignment of cards */
+@media screen and (min-width: 992px) {
+  .appearing-card-1 {
+    animation: 0.3s ease-in-out 0.15s 1 appear;
+    animation-fill-mode: both;
+  }
+
+  .appearing-card-2 {
+    animation: 0.3s ease-in-out 0.3s 1 appear;
+    animation-fill-mode: both;
+  }
+
+  .appearing-card-3 {
+    animation: 0.3s ease-in-out 0.45s 1 appear;
+    animation-fill-mode: both;
+  }
+
+  .appearing-card-4 {
+    animation: 0.3s ease-in-out 0.6s 1 appear;
+    animation-fill-mode: both;
+  }
+
+  .appearing-card-5 {
+    animation: 0.3s ease-in-out 0.75s 1 appear;
+    animation-fill-mode: both;
+  }
+
+  .appearing-card-6 {
+    animation: 0.3s ease-in-out 0.9s 1 appear;
+    animation-fill-mode: both;
+  }
+
+  .appearing-card-7 {
+    animation: 0.3s ease-in-out 1.05s 1 appear;
+    animation-fill-mode: both;
+  }
+
+  .appearing-card-8 {
+    animation: 0.3s ease-in-out 1.2s 1 appear;
+    animation-fill-mode: both;
+  }
+
+  .appearing-card-9 {
+    animation: 0.3s ease-in-out 1.35s 1 appear;
+    animation-fill-mode: both;
+  }
+
+  .appearing-card-10 {
+    animation: 0.3s ease-in-out 1.5s 1 appear;
+    animation-fill-mode: both;
+  }
+}
 .button-container {
   display: flex;
   justify-content: center;

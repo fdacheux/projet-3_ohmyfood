@@ -1,56 +1,5 @@
 /* ------------ Homepage load animation ------------ */
 
-body {
-        position: relative;
-}
-
-.loader-block {
-        display: flex; 
-        flex-direction: column;        
-        z-index: 2;
-        position: fixed;
-        @include center-flex-elements;
-        background-color: rgba(255, 255, 255, 0.9);
-        width: 100%;
-        height: 100%;
-        height: 100vh;
-        animation: 0.3s ease-out 2s both play-animation;
-        
-        &__spinner {
-                display: flex;
-                gap: 12px;
-                width: 100%;
-                @include center-flex-elements;
-        }
-
-        &__logo {
-                @include bouncing-loader-animation (0s, logo-splashing);
-        }
-        
-        &__balls {
-                height: 25px;
-                width: 25px;
-                border-radius: 100%; 
-                margin-bottom: -7px;
-        }
-
-        &__ball1{
-                background: $colour-primary;
-                @include bouncing-loader-animation (0s, bouncing-ball1);
-                margin-bottom: -10px;
-        }
-
-        &__ball2{
-                background-color: $colour-secondary;
-                @include bouncing-loader-animation (0.1s, bouncing-ball2and3);
-        }
-
-        &__ball3{
-                background: $colour-tertiary;
-                @include bouncing-loader-animation (0.05s, bouncing-ball2and3);     
-        }
-}
-
 
 @keyframes play-animation {
         20%{
@@ -125,43 +74,6 @@ body {
         }
 } 
 
-      
-
-
-/* ------------ Button animation ------------ */
-
-.button-container__button:hover {
-        opacity:0.85;
-        box-shadow: 0px 6px 5px 3px darken($white-colour, 25%);
-}
-
-/* ------------ Howto section hovering steps animation ------------ */
-
-.howto-section__step:hover{
-
-        & i{
-                color: $colour-primary;
-        }
-        &::after{
-                opacity: 0.1;
-        }
-}
-
-/* ------------ Favourite icon animation ------------ */
-
-input:checked{
-        &  +label>.bg-icon {
-                transform: scale(1.1);
-        }
-}
-
-@media screen and (min-width: get-min-width(large)) {
-        .heart-icon:hover{
-                &>.bg-icon {
-                        transform: scale(1.1);
-                }
-        }
-}
 
 
 
@@ -183,73 +95,5 @@ input:checked{
 
 
 
-
-        
-@for $i from 1 through $appearing-cards {
-        .appearing-card-#{$i}{
-                @include animation-properties(0.5s, $i, 0.22);
-    }    
-}
-
-
-@media screen and (min-width: get-min-width(large)) {
-        @for $i from 1 through $appearing-cards {
-                .appearing-card-#{$i}{
-                        @include animation-properties(0.3s, $i, 0.15);
-            }    
-        }
-}
-
-
-/* ------------ Menu-cards check animation ------------ */
-
-.menu-card {
-        &__icon-box {
-                transform: scaleX(0);
-                transform-origin: right;
-                @include linear-animations-transition(transform, 0.4s);
-        }
-        &__check-icon{
-                transform: translateX(70px);
-                @include linear-animations-transition(transform, 0.3s);
-                transition-delay: 0.1s;
-        }
-        &__price-tag{
-                @include linear-animations-transition(all, 0.4s);
-        }
-
-        &__checkbox {
-                &:checked {
-                        &+ div{
-                                & i {
-                                        @include rolling-check-icon;
-                                }
-                                & .menu-card{
-                                        &__icon-box {
-                                                @include appearing-icon-box;
-                                        }
-                                        &__price-tag {
-                                                @include moving-price-tag;
-                                        }
-                                }    
-                        } 
-                }
-        }        
-        @media screen and (min-width: map-get($breakpoints, large)) {           
-                &:hover>input:not(:checked) +div{
-                        & i{
-                                @include rolling-check-icon;
-                        } 
-                        & .menu-card{
-                                &__icon-box {
-                                        @include appearing-icon-box;                               
-                                }     
-                                &__price-tag{
-                                        @include moving-price-tag;
-                                }                 
-                        }
-                }
-        }
-}
     
 
