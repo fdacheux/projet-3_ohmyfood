@@ -10,21 +10,14 @@
 
 /* ------------ Homepage restaurants cards------------ */
 
-.restaurants-block {
+.restaurant-card {
     
-    & article {
-        width: 100%;
+
+    width: 100%;
         
-        @include medium-screens {
-            width: 40%;
-        }
-
-        @media screen and (min-width: get-min-width(large)) {
-            width: 40%;
-        }
-
+    @media screen and (min-width: get-min-width(medium)) {
+        width: 40%;
     }
-
 
     &__photo-container{
         height: 150px;
@@ -40,30 +33,30 @@
         }        
     }
     
-    &__card-img {
+    &__img {
         object-fit: cover;
         height: 100%;
         width: 100%;
         
-        &.img--centered1{
+        &--centered1{
             object-position: 50% 50%;
         }
 
-        &.img--centered2 {
+        &--centered2 {
             object-position: 50% 58%;
         }
 
-        &.img--centered3{
+        &--centered3{
             object-position: 50% 75%;
         }
 
-        &.img--centered4{
+        &--centered4{
             object-position: 50% 80%;
         }
     }
 
 
-    &__card-body {
+    &__body {
         display: flex;
         justify-content: space-between;
         align-items: center;

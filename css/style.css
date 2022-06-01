@@ -486,55 +486,48 @@ input:checked + label > .heart-icon__full {
 }
 
 /* ------------ Homepage restaurants cards------------ */
-.restaurants-block {
+.restaurant-card {
+  width: 100%;
   /* Button favourite homepage cards only */
 }
-.restaurants-block article {
-  width: 100%;
-}
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .restaurants-block article {
+@media screen and (min-width: 768px) {
+  .restaurant-card {
     width: 40%;
   }
 }
-@media screen and (min-width: 992px) {
-  .restaurants-block article {
-    width: 40%;
-  }
-}
-.restaurants-block__photo-container {
+.restaurant-card__photo-container {
   height: 150px;
   overflow: hidden;
 }
 @media screen and (min-width: 576px) and (max-width: 767px) {
-  .restaurants-block__photo-container {
+  .restaurant-card__photo-container {
     height: 200px;
   }
 }
 @media screen and (min-width: 992px) {
-  .restaurants-block__photo-container {
+  .restaurant-card__photo-container {
     max-height: 300px;
     height: 20vw;
   }
 }
-.restaurants-block__card-img {
+.restaurant-card__img {
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
-.restaurants-block__card-img.img--centered1 {
+.restaurant-card__img--centered1 {
   object-position: 50% 50%;
 }
-.restaurants-block__card-img.img--centered2 {
+.restaurant-card__img--centered2 {
   object-position: 50% 58%;
 }
-.restaurants-block__card-img.img--centered3 {
+.restaurant-card__img--centered3 {
   object-position: 50% 75%;
 }
-.restaurants-block__card-img.img--centered4 {
+.restaurant-card__img--centered4 {
   object-position: 50% 80%;
 }
-.restaurants-block__card-body {
+.restaurant-card__body {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -542,12 +535,12 @@ input:checked + label > .heart-icon__full {
   min-height: 50px;
   padding: 0.8rem 1rem;
 }
-.restaurants-block__heart-icon-container {
+.restaurant-card__heart-icon-container {
   position: absolute;
   bottom: 18px;
   right: 16px;
 }
-.restaurants-block__new-info {
+.restaurant-card__new-info {
   position: absolute;
   right: 4%;
   top: 5%;
@@ -557,18 +550,18 @@ input:checked + label > .heart-icon__full {
   color: #1b6150;
 }
 @media screen and (min-width: 576px) and (max-width: 991px) {
-  .restaurants-block__new-info {
+  .restaurant-card__new-info {
     padding: 6px 11px;
     font-size: 1rem;
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .restaurants-block__new-info {
+  .restaurant-card__new-info {
     font-size: 1.1rem;
   }
 }
 @media screen and (min-width: 1200px) {
-  .restaurants-block__new-info {
+  .restaurant-card__new-info {
     font-size: 1.3rem;
   }
 }
