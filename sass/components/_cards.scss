@@ -1,14 +1,19 @@
+/* ------------ All cards------------ */
+
+.card {
+    overflow: hidden;
+    position: relative;
+    @include cards-shadow;
+    border-radius: 15px;
+    background-color: $white-colour;
+}
+
 /* ------------ Homepage restaurants cards------------ */
 
 .restaurants-block {
     
     & article {
-        position: relative;
-        overflow: hidden;
-        @include cards-shadow;
-        border-radius: 15px;
         width: 100%;
-        background-color: $white-colour;
         
         @include medium-screens {
             width: 40%;
@@ -105,14 +110,10 @@
 /* ------------ Menu-pages cards ------------ */
 
 .menu-card{
-    @include cards-shadow;
     display: flex;
     flex-direction: column-reverse;
-    border-radius: 15px;
-    background-color: $white-colour;
     opacity:0;
-    overflow: hidden;
-    position: relative;
+    // color: blueviolet;
     
     &__label{
         z-index: 2;
